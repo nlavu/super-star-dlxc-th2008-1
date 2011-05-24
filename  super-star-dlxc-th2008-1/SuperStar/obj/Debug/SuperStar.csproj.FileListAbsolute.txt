@@ -1,0 +1,7 @@
+D:\Project\HQT\SuperStar\SuperStar\bin\ShoppingHere.dll
+D:\Project\HQT\SuperStar\SuperStar\bin\ShoppingHere.pdb
+D:\Project\HQT\SuperStar\SuperStar\bin\BUS.dll
+D:\Project\HQT\SuperStar\SuperStar\bin\BUS.pdb
+D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ShoppingHere.dll
+D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ShoppingHere.pdb

@@ -1,0 +1,5 @@
+D:\Project\HQT\ShoppingHere\ShoppingHere\bin\ShoppingHere.dll
+D:\Project\HQT\ShoppingHere\ShoppingHere\bin\ShoppingHere.pdb
+D:\Project\HQT\ShoppingHere\ShoppingHere\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\HQT\ShoppingHere\ShoppingHere\obj\Debug\ShoppingHere.dll
+D:\Project\HQT\ShoppingHere\ShoppingHere\obj\Debug\ShoppingHere.pdb
