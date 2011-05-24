@@ -1,0 +1,5 @@
+D:\Project\HQT\SuperStar\BUS\bin\Debug\BUS.dll
+D:\Project\HQT\SuperStar\BUS\bin\Debug\BUS.pdb
+D:\Project\HQT\SuperStar\BUS\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\HQT\SuperStar\BUS\obj\Debug\BUS.dll
+D:\Project\HQT\SuperStar\BUS\obj\Debug\BUS.pdb
