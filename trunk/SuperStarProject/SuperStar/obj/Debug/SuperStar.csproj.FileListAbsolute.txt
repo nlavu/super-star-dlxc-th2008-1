@@ -5,3 +5,10 @@ D:\Project\HQT\SuperStar\SuperStar\bin\BUS.pdb
 D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ResolveAssemblyReference.cache
 D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ShoppingHere.dll
 D:\Project\HQT\SuperStar\SuperStar\obj\Debug\ShoppingHere.pdb
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\bin\ShoppingHere.dll
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\bin\ShoppingHere.pdb
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\bin\BUS.dll
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\bin\BUS.pdb
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\obj\Debug\ShoppingHere.dll
+C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\SuperStar\obj\Debug\ShoppingHere.pdb
