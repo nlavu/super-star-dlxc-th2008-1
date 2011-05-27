@@ -54,6 +54,7 @@ namespace BUS
             set { _soDienThoai = value; }
         }
         #endregion
+        #region Methods
         ///hàm thêm, xóa, sửa
         public int CapNhatThongTinTaiKhoanQuanLy()
         {
@@ -81,8 +82,7 @@ namespace BUS
         /// 
         /// </summary>
         /// <param name="intMaQuanLy"></param>
-        /// <returns></returns>
-        #region Methods
+        /// <returns></returns>        
         public static QuanLy LayThongTinQuanLyTheoMa(int intMaQuanLy)
         {
             QuanLy QuanLy = new QuanLy();

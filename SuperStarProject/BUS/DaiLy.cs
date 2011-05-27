@@ -121,7 +121,7 @@ namespace BUS
             return daiLy;
         }
 
-        public static List<DaiLy> LayThongTinDaiLyTheoMa(string strTenDaiLy)
+        public static List<DaiLy> LayThongTinDaiLyTheoTen(string strTenDaiLy)
         {
             List<DaiLy> lstDaiLy = new List<DaiLy>();
             try
