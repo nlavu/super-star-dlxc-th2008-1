@@ -153,6 +153,58 @@ namespace BUS
 
             return lstDaiLy;
         }
+
+
+        /// <summary>
+        /// Thêm đại lý
+        /// </summary>
+        /// <returns></returns>
+
+        public int ThemDaiLy()
+        {
+            int res;
+            try
+            {
+                List<SqlParameter> lstParams = new List<SqlParameter>();
+                lstParams.Add(new SqlParameter("@madaily", _maDaiLy));
+                lstParams.Add(new SqlParameter("@tendaily", _tenDaiLy));
+                lstParams.Add(new SqlParameter("@diachi", _diaChi));
+                lstParams.Add(new SqlParameter("@email", _email));
+                lstParams.Add(new SqlParameter("@sodienthoai", _soDienThoai));
+                lstParams.Add(new SqlParameter("@nguoidaidien", _nguoiDaiDien));
+                res = SqlDataAccessHelper.ExecuteNoneQuery("spThemDaiLy", lstParams);
+
+            }
+            catch (Exception e)
+            {
+                res = 0;
+                throw e;
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// Xoá Đại Lý
+        /// </summary>
+        /// <returns></returns>
+        public int XoaDaiLy()
+        {
+            int res;
+            try
+            {
+                List<SqlParameter> lstParams = new List<SqlParameter>();
+                lstParams.Add(new SqlParameter("@madaily", _maDaiLy));
+                res = SqlDataAccessHelper.ExecuteNoneQuery("spXoaDaiLy", lstParams);
+
+            }
+            catch (Exception e)
+            {
+                res = 0;
+                throw e;
+            }
+            return res;
+        }
+
         #endregion
 
     }

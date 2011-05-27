@@ -32,6 +32,34 @@ namespace BUS
         }
         #endregion
 
+        #region method
 
+        /// <summary>
+        /// Lấy Danh Mục Sản Phẩm :
+        /// </summary>
+        /// <returns></returns>
+        
+        public List<DanhMucSanPham> LayDanhMucSanPham()
+        {
+            List<DanhMucSanPham> lstDanhMucSanPham = new List<DanhMucSanPham>();
+            try
+            {
+                DataTable dtDanhMucSanPham = new DataTable();
+                dtDanhMucSanPham = SqlDataAccessHelper.ExecuteQuery("spLayDanhMucSanPham");
+                foreach (DataRow dtRow in dtDanhMucSanPham.Rows)
+                {
+                    DanhMucSanPham danhMucSanPham = new DanhMucSanPham();
+                    danhMucSanPham._ma = int.Parse(dtRow["Ma"].ToString());
+                    danhMucSanPham._tenLoaiSanPham = dtRow["TenLoaiSanPham"].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return lstDanhMucSanPham;
+        }
+
+        #endregion
     }
 }

@@ -1,8 +1,3 @@
-D:\Project\HQT\SuperStar\BUS\bin\Debug\BUS.dll
-D:\Project\HQT\SuperStar\BUS\bin\Debug\BUS.pdb
-D:\Project\HQT\SuperStar\BUS\obj\Debug\ResolveAssemblyReference.cache
-D:\Project\HQT\SuperStar\BUS\obj\Debug\BUS.dll
-D:\Project\HQT\SuperStar\BUS\obj\Debug\BUS.pdb
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\bin\Debug\BUS.dll
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\bin\Debug\BUS.pdb
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\obj\Debug\ResolveAssemblyReference.cache
