@@ -164,9 +164,10 @@ namespace BUS
             SanPham sp = new SanPham();
             try
             {
-                SqlParameter param = new SqlParameter("@masanpham", masanpham);
+                List<SqlParameter> lstParam = new List<SqlParameter>();
+                lstParam.Add(new SqlParameter("@masanpham", masanpham));
 
-                DataTable dt = SqlDataAccessHelper.ExecuteQuery("spLaySanPhamTheoMa", param);
+                DataTable dt = SqlDataAccessHelper.ExecuteQuery("spLaySanPhamTheoMa", lstParam);
 
                 DataRow dr = dt.Rows[0];
 
