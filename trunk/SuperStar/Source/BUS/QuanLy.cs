@@ -54,6 +54,7 @@ namespace BUS
             set { _soDienThoai = value; }
         }
         #endregion
+
         #region Methods
         ///hàm thêm, xóa, sửa
         public int CapNhatThongTinTaiKhoanQuanLy()
