@@ -26,11 +26,14 @@ namespace ShoppingHere.Controls
             }
             else
             {
+                int IDUser = (Int32)Session["Id"];
                 TaiKhoan taiKhoan = new TaiKhoan();
-                taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan(taiKhoan.MaTaiKhoan);
+                taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan(IDUser);
 
                 lblTenTaiKhoan.Text = taiKhoan.TenTaiKhoan;
                 lblMaTaiKhoan.Text = taiKhoan.MaTaiKhoan.ToString();
+                if (taiKhoan.LoaiTK == 0)
+                    lblLoaiTaiKhoan.Text = "Admin";
                 if (taiKhoan.LoaiTK == 1)
                     lblLoaiTaiKhoan.Text = "Quản Lý";
                 if (taiKhoan.LoaiTK == 2)
@@ -38,6 +41,14 @@ namespace ShoppingHere.Controls
                 if(taiKhoan.LoaiTK == 3)
                     lblLoaiTaiKhoan.Text = "Khách Hàng";
             }
+        }
+
+        protected void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Session["IsLogin"] = 0;
+            Session["Id"] = 0;
+            Session["Username"] = "username";
+            Response.Redirect("Index.aspx");   
         }
     }
 }

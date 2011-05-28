@@ -22,7 +22,8 @@
                              	    Loại TK : <asp:Label ID="lblLoaiTaiKhoan" runat="server"></asp:Label>
                              	    <br />
                                     <br />
-                             	 <asp:Button runat="server" ID="btnDangXuat" Text="Đăng xuất" />
+                             	 <asp:Button runat="server" ID="btnDangXuat" Text="Đăng xuất" 
+                                        onclick="btnDangXuat_Click" />
                             </td>
                           </tr>
                         </table>
