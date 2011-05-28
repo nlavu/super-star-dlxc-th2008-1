@@ -3,3 +3,8 @@ C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\bin\Debug\BUS.pd
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\obj\Debug\BUS.dll
 C:\Users\Anh Vu\Desktop\SupperStar Project\SuperStarProject\BUS\obj\Debug\BUS.pdb
+E:\HK6\Do an thuc hanh HQT\super-star-dlxc-th2008-1\SuperStarProject\BUS\obj\Debug\ResolveAssemblyReference.cache
+E:\HK6\Do an thuc hanh HQT\super-star-dlxc-th2008-1\SuperStarProject\BUS\obj\Debug\BUS.dll
+E:\HK6\Do an thuc hanh HQT\super-star-dlxc-th2008-1\SuperStarProject\BUS\obj\Debug\BUS.pdb
+E:\HK6\Do an thuc hanh HQT\super-star-dlxc-th2008-1\SuperStarProject\BUS\bin\Debug\BUS.dll
+E:\HK6\Do an thuc hanh HQT\super-star-dlxc-th2008-1\SuperStarProject\BUS\bin\Debug\BUS.pdb
