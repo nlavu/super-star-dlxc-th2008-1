@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BUS
 {
-    public class DanhMucSanPham
+    public class DanhMucSanPham :SqlDataAccessHelper
     {
         #region Member Variables
         int _ma = int.MinValue;
@@ -51,6 +51,7 @@ namespace BUS
                     DanhMucSanPham danhMucSanPham = new DanhMucSanPham();
                     danhMucSanPham._ma = int.Parse(dtRow["Ma"].ToString());
                     danhMucSanPham._tenLoaiSanPham = dtRow["TenLoaiSanPham"].ToString();
+                    lstDanhMucSanPham.Add(danhMucSanPham);
                 }
             }
             catch (Exception e)

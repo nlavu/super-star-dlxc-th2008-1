@@ -2,9 +2,16 @@
 
 <asp:Panel runat="server" ID="panelDanhMucCauHoi">
     <div id="Menu_content"> 
-        <a class="menu_item" href="?page=home"><span>Lorem ipsum</span></a><br>
-        <a class="menu_item" href="?page=home"><span>Nulla  facilisi</span></a><br>
-        <a class="menu_item" href="?page=home"><span>Suspendisse</span></a><br>
+        <asp:GridView ID = "grvDanhMucSanPham" runat = "server" AllowPaging="false" ShowHeader="false" 
+        ShowFooter="false" GridLines="None" AutoGenerateColumns="false" BorderStyle="None">
+            <Columns>
+            <asp:TemplateField>                
+                <ItemTemplate>
+                    <span class="menu_item"><a href="?page=home"> <%# Eval("TenLoaiSanPham") %> </a></span>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>      
+        </asp:GridView>
     </div>
     <!--end #Menu_Content-->
 </asp:Panel>
