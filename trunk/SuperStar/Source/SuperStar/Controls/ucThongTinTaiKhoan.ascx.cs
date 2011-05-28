@@ -10,6 +10,8 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
+using System.Collections.Generic;
 
 namespace ShoppingHere.Controls
 {
@@ -21,6 +23,20 @@ namespace ShoppingHere.Controls
             if (iDaDangNhap == 0)
             {
                 panelThongTinTaiKhoan.Visible = false;
+            }
+            else
+            {
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan(taiKhoan.MaTaiKhoan);
+
+                lblTenTaiKhoan.Text = taiKhoan.TenTaiKhoan;
+                lblMaTaiKhoan.Text = taiKhoan.MaTaiKhoan.ToString();
+                if (taiKhoan.LoaiTK == 1)
+                    lblLoaiTaiKhoan.Text = "Quản Lý";
+                if (taiKhoan.LoaiTK == 2)
+                    lblLoaiTaiKhoan.Text = "Đại Lý";
+                if(taiKhoan.LoaiTK == 3)
+                    lblLoaiTaiKhoan.Text = "Khách Hàng";
             }
         }
     }

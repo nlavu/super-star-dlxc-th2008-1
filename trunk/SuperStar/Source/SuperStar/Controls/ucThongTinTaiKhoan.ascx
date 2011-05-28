@@ -13,23 +13,16 @@
                             	<img src="image/profile_48c.png" width="48" height="48" />
                             </td>
                             <td width="73%">
-                                Chào bạn <asp:Label ID="lblTenTaiKhoan" runat="server" Text=""> <span class="link-3"><a href="#">ABC</a></span></asp:Label><br />
-                                Bạn đã đạt 
-                                    <asp:Label ID="lblDiem" runat="server">
-                                    <span class="link-3"><a href="#"></a></span>
-                                    </asp:Label> điểm <br />
-                             	Cấp bậc: 
-                             	    <asp:Label runat="server" ID="lblCapBac">
-                             	        <span class="link-3"><a href="#"></a></span>
-                             	    </asp:Label>
-                             	 <br />
-                             	    <asp:Button runat="server" ID="btnDangXuat" Text="Đăng xuất" />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td align="center">        
-                                                                            
+                                    Chào bạn <asp:Label ID="lblTenTaiKhoan" runat="server"> <span class="link-3"><a href="#"></a></span></asp:Label>
+                                    <br />
+                                    <br />
+                                    Mã tài khoản : <asp:Label ID="lblMaTaiKhoan" runat="server"></asp:Label>
+                             	    <br />
+                                    <br />
+                             	    Loại TK : <asp:Label ID="lblLoaiTaiKhoan" runat="server"></asp:Label>
+                             	    <br />
+                                    <br />
+                             	 <asp:Button runat="server" ID="btnDangXuat" Text="Đăng xuất" />
                             </td>
                           </tr>
                         </table>
