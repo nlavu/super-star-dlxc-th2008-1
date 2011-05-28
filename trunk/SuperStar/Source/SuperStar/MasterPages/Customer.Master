@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.master.cs" Inherits="ShoppingHere.MasterPages.Customer" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+    <!--attach css-->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <!--end attach css-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_header" runat="server">
+    <!--nội dung header có thể add thêm-->
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="frmMaster" runat="server">
+<div class="wrapper">
+  <div id="Head">
+        <div id="Head_left">
+   		    <div id="Leaf_top"></div>
+    	    <div id="Leaf_bottom"> 
+    	        <a class="registration" href="../DangKy.aspx">REGISTRATION</a> 
+    	        <a class="log-in" href="../DangNhap.aspx">LOG IN</a> 
+    	    </div>
+   	    </div>
+        <!--end #Head_left-->		
+        <div id="Head_right">
+        	<div id="Logo">
+        		<div id="Name">
+            		<span class="blue">S</span><span>uper</span><span class="blue">S</span><span>tar</span> </div>
+        		<div id="Informations">Hello ^_^ </div>
+        	</div>
+            <!--end #Logo-->
+        	<div id="Top_menu"> 
+                <a class="contact" href="#"><span>CONTACT</span></a>                
+                <a class="old-product" href="../DanhSachSanPham.aspx"><span>OLD PRODUCT</span></a>
+                <a class="product" href="../DanhSachSanPham.aspx"><span>PRODUCT</span></a>
+                <a class="hot-product" href="../DanhSachSanPham.aspx"><span>HOT PRODUCT</span></a>
+                <a class="home" href="../Index.aspx"><span>HOME</span></a>
+        	</div>
+            <!--end #menu-->
+        </div>
+        <!--end #Head_right-->
+	</div>
+      <!-- end .header -->      
+     
+    <div class="content">               
+    	<div class="left">
+    	      <asp:ContentPlaceHolder ID="ContentPlaceHolder_danhmuc_sanpam" runat="server">
+    	      <!--danh mục sản phẩm-->
+    	      </asp:ContentPlaceHolder>
+    	      <asp:ContentPlaceHolder ID="ContentPlaceHolder_primary_content" runat="server">
+    	      <!--nội dung chính của trang -->
+    	      </asp:ContentPlaceHolder>  
+       </div>
+       <!--end . left-->
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder_sidebar" runat="server">
+       <!--Sidebar-->
+       </asp:ContentPlaceHolder>        
+  	</div>       
+  	<!-- end .content -->
+  	<div class="footer">
+   		<p>Copyright © 2011 Nhóm 1 - HQT CSDL - TH2008/1. All Rights Reserved.</p>
+    	<p>0812118 - 0812126 - 0812128 - 0812626. <a href="#">Privacy Policy </a> - <a href="#">About Our Ads</a> - <a href="#">Terms of Service </a> - <a href="#">Community Guidelines</a> - <a href="#">Safety Tips</a></p>
+    </div>
+    <!-- end .footer -->
+</div>
+<!-- end .wrapper -->
+</form>
+<!--end form bao hết toàn bộ trang web-->
+</body>
+</html>
