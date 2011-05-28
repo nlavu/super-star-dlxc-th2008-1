@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BUS
 {
-    public class DaiLy
+    public class DaiLy : SqlDataAccessHelper
     {
         #region Member Variables
 
@@ -65,7 +65,11 @@ namespace BUS
         #endregion
 
         #region Method
-        ///còn các hàm thêm, xóa, sửa thông tin đại lý
+
+        /// <summary>
+        /// Cập nhật thông tin tài khoản đại lý
+        /// </summary>
+        /// <returns></returns>
         public int CapNhatThongTinTaiKhoanDaiLy()
         {
             int res;
@@ -88,8 +92,9 @@ namespace BUS
 
             return res;
         }
+
         /// <summary>
-        /// 
+        /// Lấy thông tin đại lý theo mã đại lý
         /// </summary>
         /// <param name="intMaDaiLy"></param>
         /// <returns></returns>
@@ -121,6 +126,12 @@ namespace BUS
             return daiLy;
         }
 
+
+        /// <summary>
+        /// Lấy thông tin đại lý theo tên đại lý
+        /// </summary>
+        /// <param name="strTenDaiLy"></param>
+        /// <returns></returns>
         public static List<DaiLy> LayThongTinDaiLyTheoTen(string strTenDaiLy)
         {
             List<DaiLy> lstDaiLy = new List<DaiLy>();
@@ -147,7 +158,7 @@ namespace BUS
 
             catch (Exception e)
             {
-            
+
                 throw (e);
             }
 
