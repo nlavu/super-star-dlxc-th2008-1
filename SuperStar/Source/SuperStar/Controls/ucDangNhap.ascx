@@ -2,9 +2,8 @@
 
 <asp:Panel runat="server" ID="pnlKetQuaDangNhap">
 <table width="100%" style="border-bottom: 1px dashed #CCC" cellspacing="0" cellpadding="5">
-<tr><td align="center">Chào mừng <asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label></td></tr>
-<tr><td align="center"><asp:Button Text="Đăng xuất" runat="server" ID="btnDangXuat" 
-        onclick="btnDangXuat_Click" /></td></tr>
+<tr><td align="center">Chúc mừng <a href="../Index.aspx"><asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label></a> đã đăng nhập thành công.</td></tr>
+<tr><td align="center"><a href="../Index.aspx">Click vào đây để về trang chủ</a></td></tr>
 </table>
 </asp:Panel>
 
@@ -32,8 +31,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" 
-                        onclick="btnDangNhap_Click" />
+                    <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" onclick="btnDangNhap_Click" />
                 </td>
             </tr>                        
           </table>                          

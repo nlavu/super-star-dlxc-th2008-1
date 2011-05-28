@@ -22,8 +22,9 @@ namespace ShoppingHere.Controls
             if (IsLogin == 1)
             {
                 pnlDangNhap.Visible = false;
-                lblTenNguoiDung.Text = (string)Session["Username"];
-                pnlKetQuaDangNhap.Visible = true;
+                //lblTenNguoiDung.Text = (string)Session["Username"];
+                //pnlKetQuaDangNhap.Visible = true;
+                Response.Redirect("Index.aspx");
             }
             else
             {
@@ -34,23 +35,24 @@ namespace ShoppingHere.Controls
 
         protected void btnDangNhap_Click(object sender, EventArgs e)
         {
-            lblTenNguoiDung.Text = "abc";
-            pnlDangNhap.Visible = false;
-            pnlKetQuaDangNhap.Visible = true;
-
-            return;
+            lblTenNguoiDung.Text = "";
+            //pnlDangNhap.Visible = false;
+            //pnlKetQuaDangNhap.Visible = true;
+            lblLoi1.Text = "";
+            lblLoi2.Text = "";
+            
             if (txtTenTaiKhoan.Text.Trim() == "")
             {
-                pnlDangNhap.Visible = true;
-                lblLoi1.Text = "Chua nhap ten dang nhap";
-                pnlKetQuaDangNhap.Visible = false;
+                //pnlDangNhap.Visible = true;
+                lblLoi1.Text = "Chưa nhập tên đăng nhập";
+                //pnlKetQuaDangNhap.Visible = false;
                 return;
             }
             if (txtMatKhau.Text.Trim() == "")
             {
-                pnlDangNhap.Visible = true;
-                lblLoi2.Text = "Chua nhap mat khau";
-                pnlKetQuaDangNhap.Visible = false;
+                //pnlDangNhap.Visible = true;
+                lblLoi2.Text = "Chưa nhập mật khẩu";
+                //pnlKetQuaDangNhap.Visible = false;
                 return;
             }
             
@@ -58,9 +60,9 @@ namespace ShoppingHere.Controls
 
             if (tk == null)
             {
-                pnlDangNhap.Visible = true;
+                //pnlDangNhap.Visible = true;
                 lblLoi1.Text = "Tên đăng nhập không tồn tại";
-                pnlKetQuaDangNhap.Visible = false;
+                //pnlKetQuaDangNhap.Visible = false;
             }
             else
             {
@@ -78,7 +80,7 @@ namespace ShoppingHere.Controls
                         Session["Authentication"] = "KhachHang";
                     
 
-                    lblTenNguoiDung.Text = tk.TenTaiKhoan + "abc";
+                    lblTenNguoiDung.Text = tk.TenTaiKhoan;
                     pnlDangNhap.Visible = false;
                     pnlKetQuaDangNhap.Visible = true;
 
@@ -86,28 +88,11 @@ namespace ShoppingHere.Controls
                 }
                 else
                 {
-                    pnlDangNhap.Visible = true;
+                    //pnlDangNhap.Visible = true;
                     lblLoi2.Text = "Mật khẩu không đúng";
-                    pnlKetQuaDangNhap.Visible = false;
+                    //pnlKetQuaDangNhap.Visible = false;
                 }
             }
         }
-
-        protected void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            //trạng thái đăng nhập
-            Session["IsLogin"] = 0;
-            // id user
-            Session["Id"] = 0;
-            // tên đăng nhập
-            Session["Username"] = "username";
-            // quyền truy xuất
-            Session["Authentication"] = "KhachHang";
-
-            pnlKetQuaDangNhap.Visible = false;
-            pnlDangNhap.Visible = true;
-        }
-
-
     }
 }
