@@ -25,31 +25,31 @@ namespace BUS
 
         #region Properties
 
-        public int IntMaTaiKhoan
+        public int MaTaiKhoan
         {
             get { return intMaTaiKhoan; }
             set { intMaTaiKhoan = value; }
         }
 
-        public string StrTenTaiKhoan
+        public string TenTaiKhoan
         {
             get { return strTenTaiKhoan; }
             set { strTenTaiKhoan = value; }
         }
 
-        public string StrMatKhau
+        public string MatKhau
         {
             get { return strMatKhau; }
             set { strMatKhau = value; }
         }
 
-        public string StrAnhDaiDien
+        public string AnhDaiDien
         {
             get { return strAnhDaiDien; }
             set { strAnhDaiDien = value; }
         }
 
-        public int IntLoaiTK
+        public int LoaiTK
         {
             get { return intLoaiTK; }
             set { intLoaiTK = value; }
@@ -69,10 +69,10 @@ namespace BUS
             try
             {
                 List<SqlParameter> lstParams = new List<SqlParameter>();
-                lstParams.Add(new SqlParameter("@tentaikhoan", taiKhoan.StrTenTaiKhoan));
-                lstParams.Add(new SqlParameter("@matkhau", taiKhoan.StrMatKhau));
-                lstParams.Add(new SqlParameter("@anhdaidien", taiKhoan.StrAnhDaiDien));
-                lstParams.Add(new SqlParameter("@loaitk", taiKhoan.IntLoaiTK));
+                lstParams.Add(new SqlParameter("@tentaikhoan", taiKhoan.TenTaiKhoan));
+                lstParams.Add(new SqlParameter("@matkhau", taiKhoan.MatKhau));
+                lstParams.Add(new SqlParameter("@anhdaidien", taiKhoan.AnhDaiDien));
+                lstParams.Add(new SqlParameter("@loaitk", taiKhoan.LoaiTK));
                 res = SqlDataAccessHelper.ExecuteNoneQuery("spThemTaiKhoan", lstParams);
 
             }
