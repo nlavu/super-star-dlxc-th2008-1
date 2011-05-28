@@ -5,10 +5,10 @@ AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SuperStar.Index" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucDanhSanhSanPhamHot.ascx" TagName="DSSanPhamHot" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucSanPhamNoiBat.ascx" TagName="SanPhamNoiBat" TagPrefix="UC" %>
-
+<%@ Register Src="~/Controls/ucDangNhap.ascx" TagName="DangNhap" TagPrefix="UC" %>
 
 <asp:Content ID="idHeader" ContentPlaceHolderID="ContentPlaceHolder_header" runat="server">
-<!--header-->
+    <!--header-->
 </asp:Content>
 
 <asp:Content ID="idDanhMucSanPham" ContentPlaceHolderID="ContentPlaceHolder_danhmuc_sanpam" runat="server">
@@ -56,7 +56,7 @@ AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SuperStar.Index" %>
 <asp:Content ID="idSideBar" ContentPlaceHolderID="ContentPlaceHolder_sidebar" runat="server">
     <div class="sidebar">           
         <div>
-            <UC:ThongTinTaiKhoan runat="server" id="UcThongTinTaiKhoan" />
+            <UC:DangNhap runat="server" ID="UCDangNhap" />
         </div>
         <!--end .Thông tin tài khoản-->
     </div>

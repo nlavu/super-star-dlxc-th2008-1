@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
 
 namespace ShoppingHere.Controls
 {
@@ -17,7 +18,96 @@ namespace ShoppingHere.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int IsLogin = (int)Session["IsLogin"];
+            if (IsLogin == 1)
+            {
+                pnlDangNhap.Visible = false;
+                lblTenNguoiDung.Text = (string)Session["Username"];
+                pnlKetQuaDangNhap.Visible = true;
+            }
+            else
+            {
+                pnlKetQuaDangNhap.Visible = false;
+                pnlDangNhap.Visible = true;
+            }
         }
+
+        protected void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            lblTenNguoiDung.Text = "abc";
+            pnlDangNhap.Visible = false;
+            pnlKetQuaDangNhap.Visible = true;
+
+            return;
+            if (txtTenTaiKhoan.Text.Trim() == "")
+            {
+                pnlDangNhap.Visible = true;
+                lblLoi1.Text = "Chua nhap ten dang nhap";
+                pnlKetQuaDangNhap.Visible = false;
+                return;
+            }
+            if (txtMatKhau.Text.Trim() == "")
+            {
+                pnlDangNhap.Visible = true;
+                lblLoi2.Text = "Chua nhap mat khau";
+                pnlKetQuaDangNhap.Visible = false;
+                return;
+            }
+            
+            TaiKhoan tk = TaiKhoan.LayThongTinTaiKhoanTheoTenTaiKhoan(txtTenTaiKhoan.Text.Trim());
+
+            if (tk == null)
+            {
+                pnlDangNhap.Visible = true;
+                lblLoi1.Text = "Tên đăng nhập không tồn tại";
+                pnlKetQuaDangNhap.Visible = false;
+            }
+            else
+            {
+                if (tk.MatKhau.CompareTo(txtMatKhau.Text.Trim()) == 0)
+                {
+                    Session["IsLogin"] = 1;
+                    Session["Id"] = tk.MaTaiKhoan;
+                    Session["UserName"] = tk.TenTaiKhoan;
+
+                    if (tk.LoaiTK == 0)
+                        Session["Authentication"] = "Admin";
+                    if (tk.LoaiTK == 1)
+                        Session["Authentication"] = "QuanLy";
+                    if (tk.LoaiTK == 2)
+                        Session["Authentication"] = "KhachHang";
+                    
+
+                    lblTenNguoiDung.Text = tk.TenTaiKhoan + "abc";
+                    pnlDangNhap.Visible = false;
+                    pnlKetQuaDangNhap.Visible = true;
+
+                    
+                }
+                else
+                {
+                    pnlDangNhap.Visible = true;
+                    lblLoi2.Text = "Mật khẩu không đúng";
+                    pnlKetQuaDangNhap.Visible = false;
+                }
+            }
+        }
+
+        protected void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            //trạng thái đăng nhập
+            Session["IsLogin"] = 0;
+            // id user
+            Session["Id"] = 0;
+            // tên đăng nhập
+            Session["Username"] = "username";
+            // quyền truy xuất
+            Session["Authentication"] = "KhachHang";
+
+            pnlKetQuaDangNhap.Visible = false;
+            pnlDangNhap.Visible = true;
+        }
+
+
     }
 }
