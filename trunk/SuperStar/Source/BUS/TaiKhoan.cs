@@ -130,8 +130,14 @@ namespace BUS
             {
                 DataTable dtTaiKhoan = new DataTable();
                 dtTaiKhoan = SqlDataAccessHelper.ExecuteQuery("spLayTaiKhoanTheoTen", lstParams);
-                foreach(DataRow dtRow in dtTaiKhoan.Rows)
+
+                if (dtTaiKhoan.Rows.Count == 0)
                 {
+                    return null;
+                }
+                else
+                {
+                    DataRow dtRow = dtTaiKhoan.Rows[0];                
                     taiKhoan.intMaTaiKhoan = int.Parse(dtRow["MaTaiKhoan"].ToString());
                     taiKhoan.strTenTaiKhoan = dtRow["TenTaiKhoan"].ToString();
                     taiKhoan.strMatKhau = dtRow["MatKhau"].ToString();
