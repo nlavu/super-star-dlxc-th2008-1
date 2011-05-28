@@ -220,6 +220,7 @@
     <Content Include="Global.asax" />
     <Content Include="MasterPages\Customer.Master" />
     <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="Path.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">

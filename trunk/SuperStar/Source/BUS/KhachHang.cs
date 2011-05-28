@@ -115,6 +115,32 @@ namespace BUS
 
             return res;
         }
+        /// <summary>
+        /// Thêm thông tin khách hàng
+        /// Thu Hà  : 29/5/2011
+        /// </summary>
+        /// <returns></returns>
+        public static int ThemKhachHang(KhachHang kh)
+        {
+            int res;
+            try
+            {
+                List<SqlParameter> lstParam = new List<SqlParameter>();
+                lstParam.Add(new SqlParameter("@makhachhang", kh.MaKhachHang));
+                lstParam.Add(new SqlParameter("@hoten", kh.HoTen));
+                lstParam.Add(new SqlParameter("@diachi", kh.DiaChi));
+                lstParam.Add(new SqlParameter("@email", kh.Email));
+                lstParam.Add(new SqlParameter("@sodienthoai", kh.SoDienThoai));
+
+                res = SqlDataAccessHelper.ExecuteNoneQuery("spThemTaiKhoanKhachHang", lstParam);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return res;
+        }
         #endregion
     }
 }

@@ -14,13 +14,49 @@ namespace ShoppingHere.Controls {
     public partial class ucDangKy {
         
         /// <summary>
-        /// panelDangKy control.
+        /// pnlKetQuaDangKy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelDangKy;
+        protected global::System.Web.UI.WebControls.Panel pnlKetQuaDangKy;
+        
+        /// <summary>
+        /// lblTenNguoiDung control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTenNguoiDung;
+        
+        /// <summary>
+        /// pnlThongBaoLoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlThongBaoLoi;
+        
+        /// <summary>
+        /// lblThongBaoLoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblThongBaoLoi;
+        
+        /// <summary>
+        /// pnlDangKy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDangKy;
         
         /// <summary>
         /// txtTenTaiKhoan control.
@@ -32,6 +68,24 @@ namespace ShoppingHere.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtTenTaiKhoan;
         
         /// <summary>
+        /// requiredValidatorTenTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredValidatorTenTaiKhoan;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// txtMatKhau1 control.
         /// </summary>
         /// <remarks>
@@ -39,6 +93,24 @@ namespace ShoppingHere.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMatKhau1;
+        
+        /// <summary>
+        /// requiredValidatorMatKhau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredValidatorMatKhau;
+        
+        /// <summary>
+        /// validatorMatKhau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validatorMatKhau;
         
         /// <summary>
         /// txtMatKhau2 control.
@@ -50,6 +122,24 @@ namespace ShoppingHere.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtMatKhau2;
         
         /// <summary>
+        /// requiredValidatorMatKhau2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredValidatorMatKhau2;
+        
+        /// <summary>
+        /// compareMatKhau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareMatKhau;
+        
+        /// <summary>
         /// txtHoTen control.
         /// </summary>
         /// <remarks>
@@ -57,6 +147,15 @@ namespace ShoppingHere.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoTen;
+        
+        /// <summary>
+        /// validateHoTen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateHoTen;
         
         /// <summary>
         /// txtEmail control.
@@ -68,6 +167,24 @@ namespace ShoppingHere.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
+        /// requiredValidatorEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredValidatorEmail;
+        
+        /// <summary>
+        /// validatorEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validatorEmail;
+        
+        /// <summary>
         /// txtDiaChi control.
         /// </summary>
         /// <remarks>
@@ -75,6 +192,15 @@ namespace ShoppingHere.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
+        
+        /// <summary>
+        /// validatorDiaChi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatorDiaChi;
         
         /// <summary>
         /// txtSoDienThoai control.
@@ -86,13 +212,31 @@ namespace ShoppingHere.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
         
         /// <summary>
-        /// txtAnhDaiDien control.
+        /// requiredValidatorSodienThoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnhDaiDien;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredValidatorSodienThoai;
+        
+        /// <summary>
+        /// validatorSoDienThoai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validatorSoDienThoai;
+        
+        /// <summary>
+        /// fileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
         
         /// <summary>
         /// btnDangKy control.
