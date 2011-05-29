@@ -189,7 +189,7 @@ namespace BUS
                 sp.DonGia = float.Parse(dr["DonGia"].ToString());
                 sp.MaDanhMuc = int.Parse(dr["MaDanhMuc"].ToString());
                 sp.MaNguoiNhap = int.Parse(dr["MaNguoiNhap"].ToString());
-                sp.SoLuongSP = int.Parse(dr["MaSanPham"].ToString());
+                sp.SoLuongSP = int.Parse(dr["SoLuongSP"].ToString());
                 sp.SoLuongTon = int.Parse(dr["SoLuongTon"].ToString());
                 sp.TenSanPham = dr["TenSanPham"].ToString();
                 sp.ThoiGianBD_Ban = DateTime.Parse(dr["ThoiGianBD_Ban"].ToString());

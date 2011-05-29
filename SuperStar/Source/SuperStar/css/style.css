@@ -863,3 +863,20 @@ a:hover, a:active, a:focus{
 {
 	color:Red;
 }
+.order
+{
+	background: url(../image/order.gif) top left no-repeat;
+	border:0;
+	height:50px;
+	width:200px;
+
+}
+.order-min
+{
+	background: url(../image/order_mini.gif) top left no-repeat;
+	border:0;
+	height:20px;
+	width:70px;
+
+
+}
