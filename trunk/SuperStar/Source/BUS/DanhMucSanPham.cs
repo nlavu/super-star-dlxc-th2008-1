@@ -56,7 +56,7 @@ namespace BUS
             }
             catch (Exception e)
             {
-                throw e;
+                
             }
             return lstDanhMucSanPham;
         }
