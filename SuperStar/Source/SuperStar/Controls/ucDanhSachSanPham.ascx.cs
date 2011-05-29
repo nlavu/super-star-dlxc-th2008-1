@@ -10,6 +10,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
+using System.Collections.Generic;
+
 
 namespace ShoppingHere.Controls
 {
@@ -17,7 +20,11 @@ namespace ShoppingHere.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //List<SanPham> lstSanPham = new List<SanPham>();
+            List<SanPham> lstSanPham = SanPham.LayDsSanPhamConThoiHanMuaVaConHang();
 
+            this.dlDanhSachSanPham.DataSource = lstSanPham;
+            this.dlDanhSachSanPham.DataBind();
         }
     }
 }
