@@ -16,7 +16,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
            		  		    <img src="../image-product/ipod.JPG" />
                       </div>
                       <div class="list-product-info">
-                  		    <div class="name" ><a href="chi_tiet_san_pham.html"><%#Eval("TenSanPham") %> </a></div>
+                  		    <div class="name" ><a href="ChiTietSanPham.aspx"><%#Eval("TenSanPham") %> </a></div>
                             <div class="info-line">Giá: <span class="price"><%#Eval("DonGia") %></span> </div>
                             <div class="info-line">Điểm thưởng: <span class="score"><%#Eval("DiemThuong") %> </span></div>
                             <div class="info-line"> Còn lại <span class="number-product"><%#Eval("SoLuongTon") %></span></div>
@@ -39,7 +39,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
        		  		        <img src="../image-product/ipod.JPG" />
                       </div>
                       <div class="list-product-info">
-              		        <div class="name" ><a href="chi_tiet_san_pham.html"><%#Eval("TenSanPham") %> </a></div>
+              		        <div class="name" ><a href="ChiTietSanPham.aspx"><%#Eval("TenSanPham") %> </a></div>
                             <div class="info-line">Giá: <span class="price"><%#Eval("DonGia") %></span> </div>
                             <div class="info-line">Điểm thưởng: <span class="score"><%#Eval("DiemThuong") %> </span></div>
                             <div class="info-line"> Còn lại <span class="number-product"><%#Eval("SoLuongTon") %></span></div>
