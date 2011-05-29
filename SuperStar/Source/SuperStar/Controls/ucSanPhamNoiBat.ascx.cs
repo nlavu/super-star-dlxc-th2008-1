@@ -20,7 +20,7 @@ namespace ShoppingHere.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             SanPham sanPham = new SanPham();
-            int maSanPham = int.Parse(Request.QueryString["maSanPham"]);
+            int maSanPham = 1;//Request.QueryString("maSanPham");
             sanPham = SanPham.LaySanPhamTheoMa(maSanPham);
             imgSanPham.ImageUrl = sanPham.HinhAnh;
             hrTenSanPham.Text = sanPham.TenSanPham;
