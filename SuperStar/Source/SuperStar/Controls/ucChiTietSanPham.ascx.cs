@@ -23,8 +23,9 @@ namespace ShoppingHere.Controls
 
 
             int maSanPham;
-            maSanPham = 1;
-           // maSanPham = int.Parse(Request.QueryString["maSanPham"]);
+           // maSanPham = 1; 
+            //lấy mã sản phẩm từ danh sách sản phẩm
+            maSanPham = int.Parse(Request.QueryString["maSanPham"]);
        
             sanPham = SanPham.LaySanPhamTheoMa(maSanPham);
             imgSanPham.ImageUrl = sanPham.HinhAnh;
