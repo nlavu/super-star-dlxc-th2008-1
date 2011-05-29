@@ -157,7 +157,7 @@ namespace BUS
             try
             {
                 List<SqlParameter> lstParam = new List<SqlParameter>();
-                lstParam.Add(new SqlParameter("@matangpham", maSP));
+                lstParam.Add(new SqlParameter("@masanpham", maSP));
                 
                 DataTable dt = new DataTable();
                 dt = SqlDataAccessHelper.ExecuteQuery("spLayDSTangPhamTheoMaSP", lstParam);

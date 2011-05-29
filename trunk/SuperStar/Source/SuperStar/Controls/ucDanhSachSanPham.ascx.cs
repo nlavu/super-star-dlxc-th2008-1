@@ -22,7 +22,7 @@ namespace ShoppingHere.Controls
         {
             //List<SanPham> lstSanPham = new List<SanPham>();
             List<SanPham> lstSanPham = SanPham.LayDsSanPhamConThoiHanMuaVaConHang();
-
+           
             this.dlDanhSachSanPham.DataSource = lstSanPham;
             this.dlDanhSachSanPham.DataBind();
         }
