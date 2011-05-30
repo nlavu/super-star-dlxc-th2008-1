@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
 
 namespace ShoppingHere.MasterPages
 {
@@ -17,7 +18,27 @@ namespace ShoppingHere.MasterPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // kiểm tra đã đăng nhập chưa
+            int iDaDangNhap = (Int32)Session["IsLogin"];
+            if (iDaDangNhap == 0)
+            {
+                hpRegister.NavigateUrl = "../DangKy.aspx";
+                hpRegister.Text = "REGISTRATION";
 
+                hpLogin.NavigateUrl = "../DangNhap.aspx";
+                hpLogin.Text = "LOG IN";
+            }
+            else
+            {
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan((Int32)Session["Id"]);
+
+                hpRegister.NavigateUrl = "../Index.aspx";   //link về trang cá nhân
+                hpRegister.Text = "HELLO "+ taiKhoan.TenTaiKhoan;
+
+                hpLogin.NavigateUrl = "#";
+                hpLogin.Text = "LOG OUT";
+            }
         }
     }
 }

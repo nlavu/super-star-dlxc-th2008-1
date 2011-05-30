@@ -18,8 +18,8 @@
         <div id="Head_left">
    		    <div id="Leaf_top"></div>
     	    <div id="Leaf_bottom"> 
-    	        <a class="registration" href="../DangKy.aspx">REGISTRATION</a> 
-    	        <a class="log-in" href="../DangNhap.aspx">LOG IN</a> 
+    	        <asp:HyperLink CssClass="registration" runat="server" ID="hpRegister" > </asp:HyperLink> 
+    	        <asp:HyperLink CssClass="log-in"  runat="server" ID="hpLogin" > </asp:HyperLink>
     	    </div>
    	    </div>
         <!--end #Head_left-->		
