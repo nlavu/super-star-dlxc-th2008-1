@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1B304311-DAF7-4BBA-85CC-D9B3EED6A03E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -92,12 +92,12 @@
     <Compile Include="Controls\ucDanhSachSanPham.ascx.designer.cs">
       <DependentUpon>ucDanhSachSanPham.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ucDanhSanhSanPhamHot.ascx.cs">
-      <DependentUpon>ucDanhSanhSanPhamHot.ascx</DependentUpon>
+    <Compile Include="Controls\ucDanhSachSanPhamHot.ascx.cs">
+      <DependentUpon>ucDanhSachSanPhamHot.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\ucDanhSanhSanPhamHot.ascx.designer.cs">
-      <DependentUpon>ucDanhSanhSanPhamHot.ascx</DependentUpon>
+    <Compile Include="Controls\ucDanhSachSanPhamHot.ascx.designer.cs">
+      <DependentUpon>ucDanhSachSanPhamHot.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ucDatHang.ascx.cs">
       <DependentUpon>ucDatHang.ascx</DependentUpon>
@@ -140,6 +140,13 @@
     </Compile>
     <Compile Include="DanhSachSanPham.aspx.designer.cs">
       <DependentUpon>DanhSachSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachSanPhamHot.aspx.cs">
+      <DependentUpon>DanhSachSanPhamHot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachSanPhamHot.aspx.designer.cs">
+      <DependentUpon>DanhSachSanPhamHot.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatHang.aspx.cs">
       <DependentUpon>DatHang.aspx</DependentUpon>
@@ -209,13 +216,14 @@
     <Content Include="Controls\ucDangNhap.ascx" />
     <Content Include="Controls\ucDanhMucSanPham.ascx" />
     <Content Include="Controls\ucDanhSachSanPham.ascx" />
-    <Content Include="Controls\ucDanhSanhSanPhamHot.ascx" />
+    <Content Include="Controls\ucDanhSachSanPhamHot.ascx" />
     <Content Include="Controls\ucDatHang.ascx" />
     <Content Include="Controls\ucSanPhamNoiBat.ascx" />
     <Content Include="Controls\ucThongTinTaiKhoan.ascx" />
     <Content Include="DangKy.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DanhSachSanPham.aspx" />
+    <Content Include="DanhSachSanPhamHot.aspx" />
     <Content Include="DatHang.aspx" />
     <Content Include="Global.asax" />
     <Content Include="MasterPages\Customer.Master" />
@@ -251,6 +259,9 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

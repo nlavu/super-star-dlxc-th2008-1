@@ -309,7 +309,7 @@ namespace BUS
             }
             catch (Exception e)
             {
-                throw e;
+                
             }
             return lstSanPham;
         }
@@ -333,6 +333,16 @@ namespace BUS
         public static List<SanPham> LayDsSanPhamHetThoiHanMuaHoacHetHang()
         {
             return SanPham.LayDsSanPham("spLayDSSanPhamHetThoiHanMuaHoacHetHang");
+        }
+
+        /// <summary>
+        /// Lấy danh sách sản phẩm hot (thời gian bắt đầu bán trong 3 ngày trở lại so với ngày hiện tại)
+        /// Minh Đức    : 30/5/2011
+        /// </summary>
+        /// <returns></returns>
+        public static List<SanPham> LayDsSanPhamHot()
+        {
+            return SanPham.LayDsSanPham("spLayDSSanPhamHot");
         }
         #endregion
     }

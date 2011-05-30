@@ -3,7 +3,7 @@
 
 <%@ Register Src="~/Controls/ucDanhMucSanPham.ascx" TagName="DanhMucSanPham" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucDanhSachSanPham.ascx" TagName="DanhSachSanPham" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucDanhSachSanPhamHot.ascx" TagName="DanhSachSanPhamHot" TagPrefix="UC" %>
 
 <asp:Content ID="idHeader" ContentPlaceHolderID="ContentPlaceHolder_header" runat="server">
 <!--header-->
@@ -18,7 +18,7 @@
             </div>
             <!--end #Menu_header-->
             <div>
-                <UC:DanhMucSanPham runat="server" id="idUCDanhMucSanPham1" />
+                <UC:DanhMucSanPham runat="server" id="idUCDanhMucSanPham" />
             </div>
             <!--end #Menu_Content-->
        </div>			
@@ -33,7 +33,7 @@
   		  <tr>
           	<td>
            	   <div>
-           	        <UC:DanhSachSanPham runat="server" id="ucDSSanPham" />
+           	        <UC:DanhSachSanPhamHot runat="server" id="ucDSSanPhamHot" />
            	   </div>                 
                <!--end ProductWrapper-->	  
 			</td>
@@ -46,7 +46,7 @@
 <asp:Content ID="idSideBar" ContentPlaceHolderID="ContentPlaceHolder_sidebar" runat="server">
     <div class="sidebar">           
         <div>
-            <UC:ThongTinTaiKhoan runat="server" id="UcThongTinTaiKhoan1" />
+            <UC:ThongTinTaiKhoan runat="server" id="UcThongTinTaiKhoan" />
         </div>
         <!--end .Thông tin tài khoản-->
     </div>
