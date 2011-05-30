@@ -67,7 +67,7 @@ namespace BUS
             {
                 DataTable dt = new DataTable();
                 List<SqlParameter> lstParam = new List<SqlParameter>();
-                lstParam.Add(new SqlParameter("@maKhachHang", intMaKhachHang));
+                lstParam.Add(new SqlParameter("@makhachhang", intMaKhachHang));
 
                 dt = SqlDataAccessHelper.ExecuteQuery("spLayThongTinKhachHangTheoMa", lstParam);
 
@@ -84,7 +84,7 @@ namespace BUS
             catch (Exception e)
             {
                 khachHang = null;
-                throw (e);
+                
             }
 
             return khachHang;
