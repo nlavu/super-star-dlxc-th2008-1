@@ -32,13 +32,13 @@ namespace ShoppingHere.Controls {
         protected global::System.Web.UI.WebControls.Image imgSanPham;
         
         /// <summary>
-        /// hrTenSanPham control.
+        /// hpTenSanPham control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hrTenSanPham;
+        protected global::System.Web.UI.WebControls.HyperLink hpTenSanPham;
         
         /// <summary>
         /// lbGiaSanPham control.
@@ -84,14 +84,5 @@ namespace ShoppingHere.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMua;
-        
-        /// <summary>
-        /// txtMaSanPham control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaSanPham;
     }
 }

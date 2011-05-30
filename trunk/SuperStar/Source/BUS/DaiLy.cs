@@ -89,6 +89,40 @@ namespace BUS
             return res;
         }
         /// <summary>
+        /// Lấy ds đại lý
+        /// </summary>
+        /// <returns></returns>
+        public static List<DaiLy> LayDSDaiLy()
+        {
+            List<DaiLy> lstDaiLy = new List<DaiLy>();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = SqlDataAccessHelper.ExecuteQuery("spLayDanhSachDaiLy");
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DaiLy daiLy = new DaiLy();
+                    daiLy._maDaiLy = int.Parse(dr["MaDaiLy"].ToString());
+                    daiLy._tenDaiLy = dr["TenDaiLy"].ToString();
+                    daiLy._diaChi = dr["DiaChi"].ToString();
+                    daiLy._email = dr["Email"].ToString();
+                    daiLy._nguoiDaiDien = dr["NguoiDaiDien"].ToString();
+                    daiLy._soDienThoai = dr["SoDienThoai"].ToString();
+
+                    lstDaiLy.Add(daiLy);
+                }
+            }
+
+            catch (Exception e)
+            {
+                lstDaiLy = null;
+                throw (e);
+            }
+
+            return lstDaiLy;
+        }
+        /// <summary>
         /// Lấy thông tin đại lý theo mã đại lý   
         /// </summary>
         /// <param name="intMaDaiLy"></param>

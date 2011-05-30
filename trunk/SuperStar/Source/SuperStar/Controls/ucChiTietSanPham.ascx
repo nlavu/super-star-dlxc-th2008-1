@@ -5,7 +5,7 @@
    <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
       	<td>
-       	    <div class="productWrapper">
+       	     <div class="productWrapper">
            	  <div class="product">
                     <div class="productContent">
                         <div class="productImage">
@@ -19,7 +19,7 @@
                         <!--end ProductImage-->
                         <div class="productInfo">
                         	<div class="name" >
-                            	<a href="ChiTietSanPham.aspx"><asp:Label runat="server" ID = "hrTenSanPham" ></asp:Label> </a>
+                            	<asp:HyperLink ID="hpTenSanPham" runat="server" ></asp:HyperLink>
                             </div>
                             <div class="info-line">Giá: <span class="price"><asp:Label runat="server" ID = "lbGiaSanPham" ></asp:Label> VnD</span> </div>
                             <div class="info-line">Điểm thưởng: <span class="score"><asp:Label runat="server" ID = "lbDiemThuong" ></asp:Label>/sản phẩm </span></div>
@@ -28,15 +28,16 @@
                                 Còn lại <span class="number-product"><asp:Label runat="server" ID = "lbSoLuongTon" ></asp:Label></span> sản phẩm</div>
                             <!--div class="info-line"> cái nút mua ở đây</div-->                                          	
                            
-                                <asp:Button runat="server" ID ="btnMua" class ="order" />
-                                <asp:TextBox runat="server" ID="txtMaSanPham" Visible="false"></asp:TextBox>
+                                <asp:Button runat="server" ID ="btnMua" class="button-order" 
+                                onclick="btnMua_Click" />
+                               
                           
            			  </div>  
                         <!--end ProductInfo-->
                     </div>
                     <!--end ProductContent-->
               </div>                               
-           </div>                         
+           </div>  
            <!--end ProductWrapper-->	  
 		</td>
       </tr>
@@ -64,7 +65,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
            		  		                <img src="<%#Eval("HinhAnh") %>" />
                                   </div>
                                   <div class="list-product-info">
-                  		                <div class="name" ><a href="ChiTietSanPham.aspx"><%#Eval("TenTangPham") %> </a></div>
+                  		                <div class="name" ><a href="ChiTietSanPham.aspx?maSanPham=<%#Eval("MaSanPham") %>"><%#Eval("TenTangPham") %></a></a></div>
                                         <div class="info-line">Điểm yêu cầu: <span class="price"><%#Eval("DiemThuongYC") %></span> </div>
                                         <div class="info-line">Số lượng tối đa: <span class="score"><%#Eval("SoLuongToiDa") %> </span></div>
                                         <div class="info-line"> Còn lại <span class="number-product"><%#Eval("SoLuongConLai") %></span></div>
@@ -87,7 +88,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
        		  		                    <img src="<%#Eval("HinhAnh") %>" />
                                   </div>
                                   <div class="list-product-info">
-              		                     <div class="name" ><a href="ChiTietSanPham.aspx"><%#Eval("TenTangPham") %> </a></div>
+              		                    <div class="name" ><a href="ChiTietSanPham.aspx?maSanPham=<%#Eval("MaSanPham") %>"><%#Eval("TenTangPham") %></a></a></div>
                                         <div class="info-line">Điểm yêu cầu: <span class="price"><%#Eval("DiemThuongYC") %></span> </div>
                                         <div class="info-line">Số lượng tối đa: <span class="score"><%#Eval("SoLuongToiDa") %> </span></div>
                                         <div class="info-line"> Còn lại <span class="number-product"><%#Eval("SoLuongConLai") %></span></div>

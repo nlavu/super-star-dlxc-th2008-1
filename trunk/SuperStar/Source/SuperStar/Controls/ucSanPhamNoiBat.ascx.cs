@@ -17,18 +17,25 @@ namespace ShoppingHere.Controls
 {
     public partial class ucSanPhamNoiBat : System.Web.UI.UserControl
     {
+        int maSanPham = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
             SanPham sanPham = new SanPham();
-            int maSanPham = 1;//Request.QueryString("maSanPham");
+            maSanPham = 1;//Request.QueryString("maSanPham");
             sanPham = SanPham.LaySanPhamTheoMa(maSanPham);
             imgSanPham.ImageUrl = sanPham.HinhAnh;
-            hrTenSanPham.Text = sanPham.TenSanPham;
+            hpTenSanPham.Text = sanPham.TenSanPham;
+            hpTenSanPham.NavigateUrl = "../ChiTietSanPham.aspx?maSanPham="+sanPham.MaSanPham.ToString();
             lbGiaSanPham.Text = sanPham.DonGia.ToString();
             lbDiemThuong.Text = sanPham.DiemThuong.ToString();
             lbSoLuongSPDaBan.Text = (sanPham.SoLuongSP - sanPham.SoLuongTon).ToString();
             lbSoLuongTon.Text = sanPham.SoLuongTon.ToString();
             
+        }
+
+        protected void btnMua_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DatHang.aspx?maSanPham=" + maSanPham.ToString());
         }
     }
 }
