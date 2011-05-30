@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDanhSachSanPham.ascx.cs" Inherits="ShoppingHere.Controls.ucDanhSachSanPham" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDanhSachSanPham.ascx.cs" Inherits="SuperStar.Controls.ucDanhSachSanPham" %>
 
 
 <asp:Panel runat="server" ID="panelDanhSachSanPham" >

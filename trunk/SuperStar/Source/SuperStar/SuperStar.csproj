@@ -2,14 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1B304311-DAF7-4BBA-85CC-D9B3EED6A03E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShoppingHere</RootNamespace>
-    <AssemblyName>ShoppingHere</AssemblyName>
+    <RootNamespace>SuperStar</RootNamespace>
+    <AssemblyName>SuperStar</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -85,6 +85,13 @@
     <Compile Include="Controls\ucDanhMucSanPham.ascx.designer.cs">
       <DependentUpon>ucDanhMucSanPham.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucDanhSachDonDatHang.ascx.cs">
+      <DependentUpon>ucDanhSachDonDatHang.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDanhSachDonDatHang.ascx.designer.cs">
+      <DependentUpon>ucDanhSachDonDatHang.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucDanhSachSanPham.ascx.cs">
       <DependentUpon>ucDanhSachSanPham.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,12 +113,33 @@
     <Compile Include="Controls\ucDatHang.ascx.designer.cs">
       <DependentUpon>ucDatHang.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucQuanLySanPham.ascx.cs">
+      <DependentUpon>ucQuanLySanPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucQuanLySanPham.ascx.designer.cs">
+      <DependentUpon>ucQuanLySanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucQuanLyTaiKhoan.ascx.cs">
+      <DependentUpon>ucQuanLyTaiKhoan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucQuanLyTaiKhoan.ascx.designer.cs">
+      <DependentUpon>ucQuanLyTaiKhoan.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucSanPhamNoiBat.ascx.cs">
       <DependentUpon>ucSanPhamNoiBat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\ucSanPhamNoiBat.ascx.designer.cs">
       <DependentUpon>ucSanPhamNoiBat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucThongTinCaNhan.ascx.cs">
+      <DependentUpon>ucThongTinCaNhan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucThongTinCaNhan.ascx.designer.cs">
+      <DependentUpon>ucThongTinCaNhan.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ucThongTinTaiKhoan.ascx.cs">
       <DependentUpon>ucThongTinTaiKhoan.ascx</DependentUpon>
@@ -180,6 +208,13 @@
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TrangCaNhan.aspx.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangCaNhan.aspx.designer.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
@@ -238,6 +273,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\App_LocalResources\ucDatHang.ascx.resx" />
+    <Content Include="Controls\ucDanhSachDonDatHang.ascx" />
+    <Content Include="Controls\ucQuanLySanPham.ascx" />
+    <Content Include="Controls\ucQuanLyTaiKhoan.ascx" />
+    <Content Include="Controls\ucThongTinCaNhan.ascx" />
+    <Content Include="TrangCaNhan.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,9 +302,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

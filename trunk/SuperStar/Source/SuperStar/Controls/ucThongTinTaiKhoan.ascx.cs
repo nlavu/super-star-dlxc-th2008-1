@@ -12,8 +12,10 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using BUS;
 using System.Collections.Generic;
+using System.Xml;
+using System.IO;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucThongTinTaiKhoan : System.Web.UI.UserControl
     {
@@ -31,15 +33,47 @@ namespace ShoppingHere.Controls
                 taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan(IDUser);
 
                 lblTenTaiKhoan.Text = taiKhoan.TenTaiKhoan;
-                lblMaTaiKhoan.Text = taiKhoan.MaTaiKhoan.ToString();
-                if (taiKhoan.LoaiTK == 0)
-                    lblLoaiTaiKhoan.Text = "Admin";
+                hpThongTinCaNhan.NavigateUrl = "TrangCaNhan.aspx";
+                //kiểm tra user có up avatar lên server haykho6ng
+                // nếu có thì sử dụng ảnh user, ngược lại dùng ảnh mặc định
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(Server.MapPath("Path.xml"));
+                XmlElement xmlPath = (XmlElement)xmlDoc.SelectSingleNode("/PATH");
+                string fileAvatar = MapPath(xmlPath.InnerText.Trim() + taiKhoan.TenTaiKhoan + ".gif");
+                if (File.Exists(fileAvatar))
+                {
+                    imgAvatar.ImageUrl = fileAvatar;
+                }
+                else
+                {
+                    imgAvatar.ImageUrl = "../image-user/default.gif";
+                }
+                hpThongTinCaNhan.NavigateUrl = "../TrangCaNhan.aspx";               
+                hpDSDonDatHang.NavigateUrl = "../TrangCaNhan.aspx?type=dsddh";
+                
                 if (taiKhoan.LoaiTK == 1)
+                {
                     lblLoaiTaiKhoan.Text = "Quản Lý";
+                    hpDSDonDatHang.Text = "Danh sách đơn hàng";
+
+                    hpQuanLySanPham.Text = "Quản lý sản phẩm";
+                    hpQuanLySanPham.NavigateUrl = "../TrangCaNhan.aspx?type=sp";
+
+                    hpQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+                    hpQuanLyTaiKhoan.NavigateUrl = "../TrangCaNhan.aspx?type=tk";
+                }
                 if (taiKhoan.LoaiTK == 2)
-                    lblLoaiTaiKhoan.Text = "Đại Lý";
-                if(taiKhoan.LoaiTK == 3)
+                {
+                    hpQuanLyTaiKhoan.Visible = false;
+                    hpDSDonDatHang.Text = "Danh sách đơn hàng";
+                }
+                if (taiKhoan.LoaiTK == 3)
+                {
+                    hpQuanLyTaiKhoan.Visible = false;
                     lblLoaiTaiKhoan.Text = "Khách Hàng";
+
+                    hpDSDonDatHang.Text = "Đơn hàng của tôi";
+                }
             }
         }
 

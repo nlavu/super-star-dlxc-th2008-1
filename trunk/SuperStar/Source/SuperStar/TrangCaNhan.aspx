@@ -1,10 +1,13 @@
-﻿<%@ Page Language="C#" Title="Trang chủ :: SuperStar" MasterPageFile="~/MasterPages/Customer.Master"
-AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SuperStar.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrangCaNhan.aspx.cs" 
+Inherits="SuperStar.TrangCaNhan" MasterPageFile="~/MasterPages/Customer.Master" Title="Trang cá nhân :: SuperStar" %>
 
 <%@ Register Src="~/Controls/ucDanhMucSanPham.ascx" TagName="DanhMucSanPham" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucDanhSachSanPhamHot.ascx" TagName="DSSanPhamHot" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucSanPhamNoiBat.ascx" TagName="SanPhamNoiBat" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucThongTinCaNhan.ascx" TagName="ThongTinCaNhan" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucDanhSachDonDatHang.ascx" TagName="DSDonDatHang" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucQuanLySanPham.ascx" TagName="QuanLySanPham" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucQuanLyTaiKhoan.ascx" TagName="QuanLyTaiKhoan" TagPrefix="UC" %>
+
 
 <asp:Content ID="idHeader" ContentPlaceHolderID="ContentPlaceHolder_header" runat="server">
     <!--header-->
@@ -30,26 +33,20 @@ AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="SuperStar.Index" %>
 
 <asp:Content ID="idPrimaryContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder_primary_content">
     <div class="primary-content"> 
-  		<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  		  <tr>
-          	<td>
-           	   <div>
-           	        <UC:SanPhamNoiBat runat="server" id="ucSanPhamNoiBat" />
-           	   </div>                 
-               <!--end ProductWrapper-->	  
-			</td>
-	      </tr>
-  		  <tr>
-  		    <td>
-       	        <div>
-       	            <UC:DSSanPhamHot runat="server" ID="ucDSSanPhamHot" />
-       	        </div>
-                <!--sản phẩm hot-->
-            </td>              		    
-	      </tr>  		 
-    </table>
-</div>
-  <!--emd primary-content-->
+  		<div>
+  		    <UC:ThongTinCaNhan runat="server" ID="ucThongTinCaNhan"/>
+  		</div>
+  		<div>
+  		    <UC:DSDonDatHang runat="server" ID="ucDSDonDatHang"/>
+  		</div>
+  		<div>
+  		    <UC:QuanLySanPham runat="server" ID="ucQuanLySanPham"/>
+  		</div>
+  		<div>
+  		    <UC:QuanLyTaiKhoan runat="server" ID="ucQuanLyTaiKhoan"/>
+  		</div>
+    </div>
+    <!--emd primary-content-->
 </asp:Content>
 
 <asp:Content ID="idSideBar" ContentPlaceHolderID="ContentPlaceHolder_sidebar" runat="server">

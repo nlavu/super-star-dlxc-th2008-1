@@ -877,6 +877,12 @@ a:hover, a:active, a:focus{
 	border:0;
 	height:20px;
 	width:70px;
+}
 
-
+.order-title
+{
+	color : #F47E24;
+	font-size : 13px;
+	font-weight:bold;
+	line-height : 2em;	
 }
