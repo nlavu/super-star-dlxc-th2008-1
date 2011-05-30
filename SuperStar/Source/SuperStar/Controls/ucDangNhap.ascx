@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDangNhap.ascx.cs" Inherits="ShoppingHere.Controls.ucDangNhap" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDangNhap.ascx.cs" Inherits="SuperStar.Controls.ucDangNhap" %>
 
 <asp:Panel runat="server" ID="pnlKetQuaDangNhap">
 <table width="100%" style="border-bottom: 1px dashed #CCC" cellspacing="0" cellpadding="5">

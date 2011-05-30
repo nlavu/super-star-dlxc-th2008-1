@@ -11,9 +11,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-namespace SuperStar
+namespace SuperStar.Controls
 {
-    public partial class DangKy : System.Web.UI.Page
+    public partial class ucQuanLySanPham : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

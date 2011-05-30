@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using BUS;
 using System.Collections.Generic;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucDanhMucSanPham : System.Web.UI.UserControl
     {

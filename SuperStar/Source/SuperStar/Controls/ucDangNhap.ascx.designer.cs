@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoppingHere.Controls {
+namespace SuperStar.Controls {
     
     
     public partial class ucDangNhap {

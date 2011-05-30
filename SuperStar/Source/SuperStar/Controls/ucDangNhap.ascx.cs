@@ -12,7 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using BUS;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucDangNhap : System.Web.UI.UserControl
     {

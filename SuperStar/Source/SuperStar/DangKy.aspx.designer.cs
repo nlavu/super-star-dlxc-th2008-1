@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoppingHere {
+namespace SuperStar {
     
     
     public partial class DangKy {
@@ -20,6 +20,6 @@ namespace ShoppingHere {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDangKy ucDangKy;
+        protected global::SuperStar.Controls.ucDangKy ucDangKy;
     }
 }

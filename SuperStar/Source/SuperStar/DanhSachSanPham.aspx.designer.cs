@@ -20,7 +20,7 @@ namespace SuperStar {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDanhMucSanPham idUCDanhMucSanPham1;
+        protected global::SuperStar.Controls.ucDanhMucSanPham idUCDanhMucSanPham1;
         
         /// <summary>
         /// ucDSSanPham control.
@@ -29,7 +29,7 @@ namespace SuperStar {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDanhSachSanPham ucDSSanPham;
+        protected global::SuperStar.Controls.ucDanhSachSanPham ucDSSanPham;
         
         /// <summary>
         /// UcThongTinTaiKhoan1 control.
@@ -38,6 +38,6 @@ namespace SuperStar {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucThongTinTaiKhoan UcThongTinTaiKhoan1;
+        protected global::SuperStar.Controls.ucThongTinTaiKhoan UcThongTinTaiKhoan1;
     }
 }

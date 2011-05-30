@@ -1,11 +1,11 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDatHang.ascx.cs" Inherits="ShoppingHere.Controls.ucDonDatHang" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDatHang.ascx.cs" Inherits="SuperStar.Controls.ucDonDatHang" %>
 
 
 <asp:Panel ID="panelDatHang" runat="server" 
     meta:resourcekey="panelDatHangResource1">
     <div class="order-wrapper">
     	<div class="order">
-        	<h3>ĐƠN ĐẶT HÀNG </h3>
+        	<span class="order-title"> ĐƠN ĐẶT HÀNG </span>
         	<table width="100%" border="0" cellpadding="5" cellspacing="0" class="rounded-corner">
                 <tr>
                     <th >Tên sản phẩm</th>
@@ -20,7 +20,8 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtSoLuongMuaSP" runat="server" MaxLength="10" size="10" 
-                            meta:resourcekey="txtSoLuongMuaSPResource1"></asp:TextBox>
+                            meta:resourcekey="txtSoLuongMuaSPResource1" 
+                            ontextchanged="txtSoLuongMuaSP_TextChanged"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Label ID="lblThanhTien" runat="server" 
@@ -35,7 +36,7 @@
       </div>
         <!--end .order-->
         <div class="select-gift">
-        	<h3>CHỌN TẶNG PHẨM</h3>
+        	<span class="order-title"> CHỌN TẶNG PHẨM</span>
    	        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="rounded-corner">
                 <tr>
                     <th width="95" >Tên tặng phẩm</th>
@@ -92,18 +93,18 @@
     </div>
         <!--end .select-gift-->
         <div class="select-agent">
-        	<h3> Chọn Đại Lý
+        	<span class="order-title"> Chọn Đại Lý</span>
         	    <asp:DropDownList ID="dropListDaiLy" runat="server" 
                     meta:resourcekey="dropListDaiLyResource1">
                 </asp:DropDownList>
-        	</h3>
+        	</h3 __designer:mapid="138">
             
         </div>
         <!--end .select-agent-->
       <div class="select-buy">
-          <asp:ImageButton ID="imgButtonBuy" runat="server" ImageUrl="~/image/buy.jpg"
+          <asp:ImageButton ID="imgButtonBuy" runat="server" ImageUrl="~/image/btn_thanhtoan.gif"
               onclick="imgButtonBuy_Click" />
-        </div>
+       </div>
 	</div>
     <!--end .order-wrapper--> 
 </asp:Panel>

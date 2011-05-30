@@ -13,16 +13,16 @@ using System.Xml.Linq;
 using BUS;
 using System.Collections.Generic;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucSanPhamNoiBat : System.Web.UI.UserControl
     {
         int maSanPham = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            SanPham sanPham = new SanPham();
+            BUS.SanPham sanPham = new BUS.SanPham();
             maSanPham = 1;//Request.QueryString("maSanPham");
-            sanPham = SanPham.LaySanPhamTheoMa(maSanPham);
+            sanPham = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
             imgSanPham.ImageUrl = sanPham.HinhAnh;
             hpTenSanPham.Text = sanPham.TenSanPham;
             hpTenSanPham.NavigateUrl = "../ChiTietSanPham.aspx?maSanPham="+sanPham.MaSanPham.ToString();
@@ -36,6 +36,6 @@ namespace ShoppingHere.Controls
         protected void btnMua_Click(object sender, EventArgs e)
         {
             Response.Redirect("DatHang.aspx?maSanPham=" + maSanPham.ToString());
-        }
+        }        
     }
 }

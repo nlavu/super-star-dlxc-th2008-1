@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShoppingHere
+namespace SuperStar
 {
     public partial class DanhSachSanPhamHot : System.Web.UI.Page
     {

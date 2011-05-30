@@ -13,20 +13,23 @@ using System.Xml.Linq;
 using BUS;
 using System.Collections.Generic;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ChiTietSanPham : System.Web.UI.UserControl
     {
         int maSanPham = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            SanPham sanPham = new SanPham();
+            BUS.SanPham sanPham = new BUS.SanPham();
            
-           // maSanPham = 1; 
+            // maSanPham = 1; 
             //lấy mã sản phẩm từ danh sách sản phẩm
-            maSanPham = int.Parse(Request.QueryString["maSanPham"]);
+            if (!int.TryParse(Request.QueryString["maSanPham"], out maSanPham))
+            {
+                Response.Redirect("Index.aspx");
+            }
 
-            sanPham = SanPham.LaySanPhamTheoMa(maSanPham);
+            sanPham = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
             imgSanPham.ImageUrl = sanPham.HinhAnh;
             hpTenSanPham.Text = sanPham.TenSanPham;
             hpTenSanPham.NavigateUrl = "../ChiTietSanPham.aspx?maSanPham=" + sanPham.MaSanPham.ToString();

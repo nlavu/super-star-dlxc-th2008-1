@@ -13,10 +13,12 @@ using System.Xml.Linq;
 using BUS;
 using System.Collections.Generic;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucDonDatHang : System.Web.UI.UserControl
     {
+        int maSanPham = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // kiểm tra đã đăng nhập chưa
@@ -25,11 +27,11 @@ namespace ShoppingHere.Controls
             {
                 Response.Redirect("../Index.aspx");
             }
-            int maSanPham = 0;
+            
             if (int.TryParse((Request.QueryString["maSanPham"]),out maSanPham))
             {
                 // sản phẩm
-                SanPham sp = SanPham.LaySanPhamTheoMa(maSanPham);
+                BUS.SanPham sp = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
                 lblTenSanPham.Text = sp.TenSanPham;
                 txtSoLuongMuaSP.Text = "1";
                 lblThanhTien.Text = sp.DonGia.ToString();
@@ -51,6 +53,7 @@ namespace ShoppingHere.Controls
             }
             else
             {
+
                 Response.Redirect("../Index.aspx");
             }
         }
@@ -58,6 +61,14 @@ namespace ShoppingHere.Controls
         protected void imgButtonBuy_Click(object sender, ImageClickEventArgs e)
         {
 
+        }
+
+        protected void txtSoLuongMuaSP_TextChanged(object sender, EventArgs e)
+        {
+            // sản phẩm
+            BUS.SanPham sp = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
+            lblThanhTien.Text = (sp.DonGia * int.Parse(txtSoLuongMuaSP.Text)).ToString();
+            lblDiemThuong.Text = (sp.DiemThuong*int.Parse(txtSoLuongMuaSP.Text)).ToString();
         }
     }
 }

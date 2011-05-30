@@ -14,7 +14,7 @@ using System.Xml;
 using System.IO;
 using BUS;
 
-namespace ShoppingHere.Controls
+namespace SuperStar.Controls
 {
     public partial class ucDangKy : System.Web.UI.UserControl
     {

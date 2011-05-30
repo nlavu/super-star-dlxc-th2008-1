@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDangKy.ascx.cs" Inherits="ShoppingHere.Controls.ucDangKy" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDangKy.ascx.cs" Inherits="SuperStar.Controls.ucDangKy" %>
 
 
 

@@ -8,18 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SuperStar {
+namespace SuperStar.Controls {
     
     
-    public partial class DangNhap {
-        
-        /// <summary>
-        /// ucDangNhap control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SuperStar.Controls.ucDangNhap ucDangNhap;
+    public partial class ucDanhSachDonDatHang {
     }
 }

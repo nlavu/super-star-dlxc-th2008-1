@@ -12,7 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using BUS;
 
-namespace ShoppingHere.MasterPages
+namespace SuperStar.MasterPages
 {
     public partial class Customer : System.Web.UI.MasterPage
     {
@@ -34,7 +34,7 @@ namespace ShoppingHere.MasterPages
                 taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan((Int32)Session["Id"]);
 
                 hpRegister.NavigateUrl = "../Index.aspx";   //link về trang cá nhân
-                hpRegister.Text = "HELLO "+ taiKhoan.TenTaiKhoan;
+                hpRegister.Text = "Hi, "+ taiKhoan.TenTaiKhoan;
 
                 hpLogin.NavigateUrl = "#";
                 hpLogin.Text = "LOG OUT";

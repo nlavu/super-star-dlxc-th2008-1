@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DangNhap.aspx.cs" Inherits="SuperStar.DangNhap" 
-   Title="Đăng nhập:: Shopping Here" MasterPageFile="~/MasterPages/Customer.Master" %>
+   Title="Đăng nhập:: SuperStar" MasterPageFile="~/MasterPages/Customer.Master" %>
 
 <%@ Register Src="~/Controls/ucDangNhap.ascx" TagName="DangNhap" TagPrefix="UC" %>
 

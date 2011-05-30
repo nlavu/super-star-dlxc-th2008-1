@@ -11,7 +11,7 @@
 namespace SuperStar {
     
     
-    public partial class Index {
+    public partial class TrangCaNhan {
         
         /// <summary>
         /// idUCDanhMucSanPham control.
@@ -23,22 +23,40 @@ namespace SuperStar {
         protected global::SuperStar.Controls.ucDanhMucSanPham idUCDanhMucSanPham;
         
         /// <summary>
-        /// ucSanPhamNoiBat control.
+        /// ucThongTinCaNhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SuperStar.Controls.ucSanPhamNoiBat ucSanPhamNoiBat;
+        protected global::SuperStar.Controls.ucThongTinCaNhan ucThongTinCaNhan;
         
         /// <summary>
-        /// ucDSSanPhamHot control.
+        /// ucDSDonDatHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SuperStar.Controls.ucDanhSachSanPhamHot ucDSSanPhamHot;
+        protected global::SuperStar.Controls.ucDanhSachDonDatHang ucDSDonDatHang;
+        
+        /// <summary>
+        /// ucQuanLySanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SuperStar.Controls.ucQuanLySanPham ucQuanLySanPham;
+        
+        /// <summary>
+        /// ucQuanLyTaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SuperStar.Controls.ucQuanLyTaiKhoan ucQuanLyTaiKhoan;
         
         /// <summary>
         /// UCThongTinTaiKhoan control.
