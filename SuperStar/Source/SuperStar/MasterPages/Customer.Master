@@ -34,7 +34,7 @@
                 <a class="contact" href="#"><span>CONTACT</span></a>                
                 <a class="old-product" href="../DanhSachSanPham.aspx"><span>OLD PRODUCT</span></a>
                 <a class="product" href="../DanhSachSanPham.aspx"><span>PRODUCT</span></a>
-                <a class="hot-product" href="../DanhSachSanPham.aspx"><span>HOT PRODUCT</span></a>
+                <a class="hot-product" href="../DanhSachSanPhamHot.aspx"><span>HOT PRODUCT</span></a>
                 <a class="home" href="../Index.aspx"><span>HOME</span></a>
         	</div>
             <!--end #menu-->

@@ -38,7 +38,7 @@ namespace SuperStar {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDanhSanhSanPhamHot ucDSSanPhamHot;
+        protected global::ShoppingHere.Controls.ucDanhSachSanPhamHot ucDSSanPhamHot;
         
         /// <summary>
         /// UCThongTinTaiKhoan control.

@@ -14,30 +14,30 @@ namespace SuperStar {
     public partial class DanhSachSanPham {
         
         /// <summary>
-        /// idUCDanhMucSanPham1 control.
+        /// idUCDanhMucSanPham control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDanhMucSanPham idUCDanhMucSanPham1;
+        protected global::ShoppingHere.Controls.ucDanhMucSanPham idUCDanhMucSanPham;
         
         /// <summary>
-        /// ucDSSanPham control.
+        /// ucDSSanPhamHot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucDanhSachSanPham ucDSSanPham;
+        protected global::ShoppingHere.Controls.ucDanhSachSanPhamHot ucDSSanPhamHot;
         
         /// <summary>
-        /// UcThongTinTaiKhoan1 control.
+        /// UcThongTinTaiKhoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ShoppingHere.Controls.ucThongTinTaiKhoan UcThongTinTaiKhoan1;
+        protected global::ShoppingHere.Controls.ucThongTinTaiKhoan UcThongTinTaiKhoan;
     }
 }

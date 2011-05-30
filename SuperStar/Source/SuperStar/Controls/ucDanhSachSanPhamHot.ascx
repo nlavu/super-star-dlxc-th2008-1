@@ -1,9 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDanhSachSanPham.ascx.cs" Inherits="ShoppingHere.Controls.ucDanhSachSanPham" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDanhSachSanPhamHot.ascx.cs" Inherits="ShoppingHere.Controls.ucDanhSachSanPhamHot" %>
 
-
-<asp:Panel runat="server" ID="panelDanhSachSanPham" >
+<asp:Panel runat="server" ID="panelDanhSachSanPhamHot" >
 <div class="group-product">
-<asp:DataList ID="dlDanhSachSanPham" runat="server" RepeatColumns="4" RepeatDirection="horizontal" RepeatLayout="table" 
+<asp:DataList ID="dlDanhSachSanPhamHot" runat="server" RepeatColumns="4" RepeatDirection="horizontal" RepeatLayout="table" 
 CellPadding="0" CellSpacing="0" BorderWidth="0">
 <ItemTemplate>
     <table width="100%">
