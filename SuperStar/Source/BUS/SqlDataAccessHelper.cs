@@ -21,7 +21,7 @@ namespace BUS
             {
                 //string sqlCon = "[ChuoiKetNoi]";
                 //string sqlCon = @"Data Source=MINHDUC-PC;Initial Catalog=SuperStar;Integrated Security=True;Connect Timeout=30;";
-                string sqlCon = @"Data Source=MINHDUC-PC;Initial Catalog=SuperStar;Integrated Security=True;Connect Timeout=30;";
+                string sqlCon = @"Data Source=ANHVU-VAIO\MSSMLBIZ;Initial Catalog=SuperStar;Integrated Security=True;Connect Timeout=30;";
                 //string sqlCon = @"Data Source=NGOCHA-PC\SQLEXPRESS;Initial Catalog=SuperStar;Integrated Security=True;Connect Timeout=30;";
                 
                 return sqlCon;
