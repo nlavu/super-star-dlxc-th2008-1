@@ -32,10 +32,9 @@ namespace SuperStar.Controls
             {
                 // sản phẩm
                 BUS.SanPham sp = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
-                lblTenSanPham.Text = sp.TenSanPham;
-                txtSoLuongMuaSP.Text = "1";
-                lblThanhTien.Text = sp.DonGia.ToString();
-                lblDiemThuong.Text = sp.DiemThuong.ToString();
+                lblTenSanPham.Text = sp.TenSanPham;                
+                hidDonGia.Value = sp.DonGia.ToString();
+                hidDiemThuongSP.Value = sp.DiemThuong.ToString();
 
                 // danh sách đại lý
                 // bổ sung spLayDSDaiLy
@@ -62,13 +61,6 @@ namespace SuperStar.Controls
         {
 
         }
-
-        protected void txtSoLuongMuaSP_TextChanged(object sender, EventArgs e)
-        {
-            // sản phẩm
-            BUS.SanPham sp = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
-            lblThanhTien.Text = (sp.DonGia * int.Parse(txtSoLuongMuaSP.Text)).ToString();
-            lblDiemThuong.Text = (sp.DiemThuong*int.Parse(txtSoLuongMuaSP.Text)).ToString();
-        }
+        
     }
 }

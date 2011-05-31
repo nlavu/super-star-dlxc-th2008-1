@@ -32,31 +32,22 @@ namespace SuperStar.Controls {
         protected global::System.Web.UI.WebControls.Label lblTenSanPham;
         
         /// <summary>
-        /// txtSoLuongMuaSP control.
+        /// hidDonGia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoLuongMuaSP;
+        protected global::System.Web.UI.WebControls.HiddenField hidDonGia;
         
         /// <summary>
-        /// lblThanhTien control.
+        /// hidDiemThuongSP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThanhTien;
-        
-        /// <summary>
-        /// lblDiemThuong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiemThuong;
+        protected global::System.Web.UI.WebControls.HiddenField hidDiemThuongSP;
         
         /// <summary>
         /// dlDanhSachTangPham control.

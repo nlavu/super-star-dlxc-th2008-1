@@ -1,5 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucDatHang.ascx.cs" Inherits="SuperStar.Controls.ucDonDatHang" %>
 
+<script language="javascript" type="text/javascript">
+ function funcCapNhatDDH(id)
+ {
+    var ddh = document.getElementById(id);    
+    var dongia = document.getElementById("lblDonGia").value;
+    
+    var diemthuong = document.getElementById("lblDiemThuongSP").value;
+    document.getElementById("lblThanhTien").value = dongia*ddh.value;
+    document.getElementById("lblTongDiemThuong").value = diemthuong*ddh.value;
+ }
+</script>
 
 <asp:Panel ID="panelDatHang" runat="server" 
     meta:resourcekey="panelDatHangResource1">
@@ -17,19 +28,17 @@
                     <td>
                         <asp:Label ID="lblTenSanPham" runat="server" 
                             meta:resourcekey="lblTenSanPhamResource1"></asp:Label>
+                        <asp:HiddenField ID="hidDonGia" runat="server" />
+                        <asp:HiddenField ID="hidDiemThuongSP" runat="server" />
+                    </td>
+                    <td>                       
+                        <input id="txtSoLuongMuaSP" type="text" maxlength="10" size="10" onchange="funcCapNhatDDH(this.id)" value="1" />
                     </td>
                     <td>
-                        <asp:TextBox ID="txtSoLuongMuaSP" runat="server" MaxLength="10" size="10" 
-                            meta:resourcekey="txtSoLuongMuaSPResource1" 
-                            ontextchanged="txtSoLuongMuaSP_TextChanged"></asp:TextBox>
+                        <label id="lblThanhTien" ></label>
                     </td>
                     <td>
-                        <asp:Label ID="lblThanhTien" runat="server" 
-                            meta:resourcekey="lblThanhTienResource1"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Label ID="lblDiemThuong" runat="server" 
-                            meta:resourcekey="lblDiemThuongResource1"></asp:Label>
+                        <label id="lblTongDiemThuong"></label>
                     </td>
                 </tr>
    		  </table>
@@ -97,7 +106,7 @@
         	    <asp:DropDownList ID="dropListDaiLy" runat="server" 
                     meta:resourcekey="dropListDaiLyResource1">
                 </asp:DropDownList>
-        	</h3 __designer:mapid="138">
+        	</h3 __designer:mapid="3d">
             
         </div>
         <!--end .select-agent-->
