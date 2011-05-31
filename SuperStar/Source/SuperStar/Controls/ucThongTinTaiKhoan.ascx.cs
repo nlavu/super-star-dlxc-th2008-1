@@ -61,6 +61,12 @@ namespace SuperStar.Controls
 
                     hpQuanLyTaiKhoan.Text = "Quản lý tài khoản";
                     hpQuanLyTaiKhoan.NavigateUrl = "../TrangCaNhan.aspx?type=tk";
+
+                    hpDangSanPham.Text = "Đăng sản phẩm";
+                    hpDangSanPham.NavigateUrl = "../DangSanPham.aspx";
+
+                    hpThongKe.Text = "Thống kê";
+                    hpThongKe.NavigateUrl = "../ThongKe.aspx";
                 }
                 if (taiKhoan.LoaiTK == 2)
                 {

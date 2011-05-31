@@ -51,6 +51,20 @@
                             </td> 
                           </tr>
                           <tr>
+                            <td >
+                                <span class="link-3">
+                                    <asp:HyperLink ID="hpDangSanPham" runat="server"></asp:HyperLink>
+                                </span>                            
+                            </td> 
+                          </tr>
+                          <tr>
+                            <td >
+                                <span class="link-3">
+                                    <asp:HyperLink ID="hpThongKe" runat="server"></asp:HyperLink>
+                                </span>                            
+                            </td> 
+                          </tr>
+                          <tr>
                             <td align="center">
                             <asp:Button runat="server" ID="btnDangXuat" Text="Đăng xuất" 
                                     onclick="btnDangXuat_Click" />

@@ -33,11 +33,7 @@
         	<th>
         	    <h2>
         	    <div class="blue">ĐĂNG KÝ</div>                    
-                    <h2>
-                    </h2>
-                    <h2>
-                    </h2>
-                </h2>
+                 </h2> 
            </th>
       	</tr>
       <tr>
