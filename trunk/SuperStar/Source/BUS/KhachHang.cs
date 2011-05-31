@@ -69,7 +69,7 @@ namespace BUS
                 List<SqlParameter> lstParam = new List<SqlParameter>();
                 lstParam.Add(new SqlParameter("@makhachhang", intMaKhachHang));
 
-                dt = SqlDataAccessHelper.ExecuteQuery("spLayThongTinKhachHangTheoMa", lstParam);
+                dt = SqlDataAccessHelper.ExecuteQuery("spLayKhachHangTheoMa", lstParam);
 
                 foreach (DataRow dr in dt.Rows)
                 {

@@ -14,12 +14,12 @@ namespace SuperStar.Controls
         {
             int DaDangNhap = (Int32)Session["IsLogin"];
             string Authentication = (string)Session["Authentication"];
-            if (DaDangNhap == 0 || Authentication != "QuanLy")
+            if (DaDangNhap == 0 || Authentication.CompareTo("QuanLy") != 0)
             {
                 pnlDangSanPham.Visible = false;
                 pnlThongBao.Visible = true;
 
-                List<DanhMucSanPham> lstDanhMucSP = DanhMucSanPham.LayDanhMucSanPham();
+                List<BUS.DanhMucSanPham> lstDanhMucSP = BUS.DanhMucSanPham.LayDanhMucSanPham();
                 this.dropLoaiSanPham.DataSource = lstDanhMucSP;
                 this.dropLoaiSanPham.DataMember = "TenLoaiSanPham";
                 this.dropLoaiSanPham.DataTextField = "Ma";

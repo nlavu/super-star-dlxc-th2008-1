@@ -86,10 +86,11 @@ namespace BUS
         /// <returns></returns>   
         public static int ThemDonDatHang(DonDatHang ddh)
         {
-            int res;
+            int res = 0;
            
             try
             {
+                int MaDonDatHang = 0;
                 List<SqlParameter> lstParams = new List<SqlParameter>();
                 lstParams.Add(new SqlParameter("@ngaydat", ddh.ngayDat));
                 lstParams.Add(new SqlParameter("@soluongdat", ddh.soLuongDat));
@@ -99,9 +100,15 @@ namespace BUS
                 lstParams.Add(new SqlParameter("@madaily", ddh.maDaiLy));
                 lstParams.Add(new SqlParameter("@thanhtien", ddh.thanhTien));
                 lstParams.Add(new SqlParameter("@ngaynhanhang", ddh.ngayNhanHang));
+                SqlParameter param = new SqlParameter("@maddh", MaDonDatHang);
+                param.Direction = ParameterDirection.Output;
+                lstParams.Add(param);
 
-                res = SqlDataAccessHelper.ExecuteNoneQuery("spThemDonDatHang",lstParams);
-
+                if (SqlDataAccessHelper.ExecuteNoneQuery("spThemDonDatHang", lstParams) > 0)
+                {
+                    ddh.MaDDH = int.Parse(param.Value.ToString());
+                    res = 1;
+                }
 
             }
             catch (Exception e)

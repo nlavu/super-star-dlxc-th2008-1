@@ -17,11 +17,11 @@ namespace SuperStar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int iDaDangNhap = (Int32)Session["IsLogin"];
-            if (iDaDangNhap == 0)
-            {
-                Response.Redirect("Index.aspx", true);
-            }
+            //int iDaDangNhap = (Int32)Session["IsLogin"];
+            //if (iDaDangNhap == 0)
+            //{
+            //    Response.Redirect("Index.aspx", true);
+            //}
         }
     }
 }

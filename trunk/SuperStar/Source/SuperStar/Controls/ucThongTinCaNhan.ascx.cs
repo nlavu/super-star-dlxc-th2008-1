@@ -32,9 +32,7 @@ namespace SuperStar.Controls
                 TaiKhoan taiKhoan = new TaiKhoan();
                 taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan(IDUser);
 
-                lblTenTaiKhoan.Text = taiKhoan.TenTaiKhoan;
-                lblMatKhau.Text = taiKhoan.MatKhau;
-                
+                lblTenTaiKhoan.Text = taiKhoan.TenTaiKhoan;                               
                 
                 //kiểm tra user có up avatar lên server haykho6ng
                 // nếu có thì sử dụng ảnh user, ngược lại dùng ảnh mặc định
@@ -54,7 +52,7 @@ namespace SuperStar.Controls
 
                 if (taiKhoan.LoaiTK == 1)
                 {
-                    QuanLy quanLy = QuanLy.LayThongTinQuanLyTheoMa(IDUser);
+                    BUS.QuanLy quanLy = BUS.QuanLy.LayThongTinQuanLyTheoMa(IDUser);
                     lblLoaiTaiKhoan.Text = "Quản lý";
                     lblTen.Text = quanLy.HoTen;
                     lblSoDienThoai.Text = quanLy.SoDienThoai;
@@ -64,7 +62,7 @@ namespace SuperStar.Controls
                 }
                 if (taiKhoan.LoaiTK == 2)
                 {
-                    DaiLy daiLy = DaiLy.LayThongTinDaiLyTheoMa(IDUser);
+                    BUS.DaiLy daiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(IDUser);
                     lblLoaiTaiKhoan.Text = "Đại lý";
                     lblTen.Text = daiLy.TenDaiLy;
                     lblSoDienThoai.Text = daiLy.SoDienThoai;
@@ -73,13 +71,14 @@ namespace SuperStar.Controls
 
                     lblNguoiDaiDien.Visible = true;
                     lblNguoiDaiDien.Text = daiLy.NguoiDaiDien;
-                    lblHoTen.Text = "Tên đại lý: ";
+                    lblNhanHoTen.Text = "Tên đại lý: ";
                     lblDaiDien.Visible = true;
                     lblDaiDien.Text = "Người đại diện: ";
                 }
                 if (taiKhoan.LoaiTK == 3)
                 {
-                    KhachHang khachHang = KhachHang.LayThongTinKhachHangTheoMa(IDUser);
+                    BUS.KhachHang khachHang = new KhachHang();
+                    khachHang = BUS.KhachHang.LayThongTinKhachHangTheoMa(IDUser);
                     lblLoaiTaiKhoan.Text = "Khách hàng";
                     lblTen.Text = khachHang.HoTen;
                     lblSoDienThoai.Text = khachHang.SoDienThoai;
@@ -89,7 +88,7 @@ namespace SuperStar.Controls
                 if (taiKhoan.LoaiTK == 1 || taiKhoan.LoaiTK == 3)
                 {
                     lblNguoiDaiDien.Visible = false;
-                    lblHoTen.Text = "Họ tên: ";
+                    lblNhanHoTen.Text = "Họ tên: ";
                     lblDaiDien.Visible = false;
                 }
             }
