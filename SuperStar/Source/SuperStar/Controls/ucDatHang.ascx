@@ -32,7 +32,7 @@
                         <asp:HiddenField ID="hidDiemThuongSP" runat="server" />
                     </td>
                     <td>                       
-                        <input id="txtSoLuongMuaSP" type="text" maxlength="10" size="10" onchange="funcCapNhatDDH(this.id)" value="1" />
+                        <input id="txtSoLuongMuaSP" type="text" maxlength="10" size="10" runat="server" onchange="funcCapNhatDDH(this.id)" value="1" />
                     </td>
                     <td>
                         <label id="lblThanhTien" ></label>
@@ -72,7 +72,7 @@
                             <%#Eval("SoLuongToiDa")%>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtSoLuongMuaTP" runat="server" size="10" MaxLength="5" 
+                            <asp:TextBox ID="txtSoLuongTP" runat="server" size="10" MaxLength="5" 
                                 meta:resourcekey="txtSoLuongMuaTPResource1"></asp:TextBox>
                         </td>
                     </tr>
@@ -106,7 +106,7 @@
         	    <asp:DropDownList ID="dropListDaiLy" runat="server" 
                     meta:resourcekey="dropListDaiLyResource1">
                 </asp:DropDownList>
-        	</h3 __designer:mapid="3d">
+        	</h3 __designer:mapid="4c">
             
         </div>
         <!--end .select-agent-->

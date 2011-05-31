@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DangSanPham.aspx.cs" Inherits="SuperStar.SanPham"
-MasterPageFile="~/MasterPages/Customer.Master" Title="Chi tiết sản phẩm :: SuperStar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DangSanPham.aspx.cs" Inherits="SuperStar.DangSanPham"
+MasterPageFile="~/MasterPages/Customer.Master" Title="Đăng sản phẩm :: SuperStar" %>
 
 
 
 <%@ Register Src="~/Controls/ucDanhMucSanPham.ascx" TagName="DanhMucSanPham" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucChiTietSanPham.ascx" TagName="ChiTietSanPham" TagPrefix="UC" %>
+<%@ Register Src="~/Controls/ucDangSanPham.ascx" TagName="DangSanPham" TagPrefix="UC" %>
 
 
 <asp:Content ID="idHeader" ContentPlaceHolderID="ContentPlaceHolder_header" runat="server">
@@ -33,7 +33,7 @@ MasterPageFile="~/MasterPages/Customer.Master" Title="Chi tiết sản phẩm ::
 <asp:Content ID="idPrimaryContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder_primary_content">
     <div class="primary-content"> 
   		<div>
-  		    <UC:ChiTietSanPham ID="ucChiTietSanPham" runat="server" />
+  		    <UC:DangSanPham ID="ucDangSanPham" runat="server" />
   		</div>
 </div>
   <!--emd primary-content-->

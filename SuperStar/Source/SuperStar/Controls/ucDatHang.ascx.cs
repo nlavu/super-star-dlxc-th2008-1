@@ -53,14 +53,28 @@ namespace SuperStar.Controls
             else
             {
 
-                Response.Redirect("../Index.aspx");
+                Response.Redirect("Index.aspx");
             }
         }
 
         protected void imgButtonBuy_Click(object sender, ImageClickEventArgs e)
         {
+            DonDatHang ddh = new DonDatHang();
+            ddh.NgayDat = DateTime.Now;
+            ddh.SoLuongDat = int.Parse(txtSoLuongMuaSP.Value);
+            ddh.TrangThai = 1;
+            ddh.MaKhachHang = (Int32)Session["Id"];
+            ddh.MaDaiLy = int.Parse(dropListDaiLy.SelectedIndex.ToString());
+            ddh.ThanhTien = BUS.SanPham.LaySanPhamTheoMa(maSanPham).DonGia * ddh.SoLuongDat;
 
-        }
+            if (DonDatHang.ThemDonDatHang(ddh) == 1)
+            {
+                // them chi tiet don dat hang
+                //ChiTietDonDatHang 
+
+            }
+
+        }   
         
     }
 }

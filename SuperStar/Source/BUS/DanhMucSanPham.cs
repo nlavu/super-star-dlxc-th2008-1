@@ -39,7 +39,7 @@ namespace BUS
         /// Anh Vũ
         /// </summary>
         /// <returns></returns>        
-        public List<DanhMucSanPham> LayDanhMucSanPham()
+        public static List<DanhMucSanPham> LayDanhMucSanPham()
         {
             List<DanhMucSanPham> lstDanhMucSanPham = new List<DanhMucSanPham>();
             try

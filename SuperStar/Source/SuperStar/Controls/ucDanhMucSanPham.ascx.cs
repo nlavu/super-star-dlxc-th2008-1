@@ -19,8 +19,8 @@ namespace SuperStar.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DanhMucSanPham danhMucSanPham = new DanhMucSanPham();
-            List<DanhMucSanPham> lstDanhMucSanhPham = danhMucSanPham.LayDanhMucSanPham();
+            
+            List<DanhMucSanPham> lstDanhMucSanhPham = DanhMucSanPham.LayDanhMucSanPham();
             this.grvDanhMucSanPham.DataSource = lstDanhMucSanhPham;
             this.grvDanhMucSanPham.DataBind();
         }
