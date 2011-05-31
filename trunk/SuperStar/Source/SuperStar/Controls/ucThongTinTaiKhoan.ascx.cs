@@ -65,6 +65,7 @@ namespace SuperStar.Controls
                 if (taiKhoan.LoaiTK == 2)
                 {
                     hpQuanLyTaiKhoan.Visible = false;
+                    lblLoaiTaiKhoan.Text = "Đại Lý";
                     hpDSDonDatHang.Text = "Danh sách đơn hàng";
                 }
                 if (taiKhoan.LoaiTK == 3)
