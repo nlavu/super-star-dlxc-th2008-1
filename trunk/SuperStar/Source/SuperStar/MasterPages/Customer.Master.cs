@@ -34,10 +34,10 @@ namespace SuperStar.MasterPages
                 taiKhoan = TaiKhoan.LayThongTinTaiKhoanTheoMaTaiKhoan((Int32)Session["Id"]);
 
                 hpRegister.NavigateUrl = "../Index.aspx";   //link về trang cá nhân
-                hpRegister.Text = "Hi, "+ taiKhoan.TenTaiKhoan;
+                hpRegister.Text = "Hi";
 
                 hpLogin.NavigateUrl = "#";
-                hpLogin.Text = "LOG OUT";
+                hpLogin.Text = "";
             }
         }
     }

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1B304311-DAF7-4BBA-85CC-D9B3EED6A03E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -77,6 +77,13 @@
     </Compile>
     <Compile Include="Controls\ucDangNhap.ascx.designer.cs">
       <DependentUpon>ucDangNhap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucDangSanPham.ascx.cs">
+      <DependentUpon>ucDangSanPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDangSanPham.ascx.designer.cs">
+      <DependentUpon>ucDangSanPham.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ucDanhMucSanPham.ascx.cs">
       <DependentUpon>ucDanhMucSanPham.ascx</DependentUpon>
@@ -161,6 +168,13 @@
     </Compile>
     <Compile Include="DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangSanPham.aspx.cs">
+      <DependentUpon>DangSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangSanPham.aspx.designer.cs">
+      <DependentUpon>DangSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="DanhSachSanPham.aspx.cs">
       <DependentUpon>DanhSachSanPham.aspx</DependentUpon>
@@ -273,10 +287,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\App_LocalResources\ucDatHang.ascx.resx" />
+    <Content Include="Controls\ucDangSanPham.ascx" />
     <Content Include="Controls\ucDanhSachDonDatHang.ascx" />
     <Content Include="Controls\ucQuanLySanPham.ascx" />
     <Content Include="Controls\ucQuanLyTaiKhoan.ascx" />
     <Content Include="Controls\ucThongTinCaNhan.ascx" />
+    <Content Include="DangSanPham.aspx" />
     <Content Include="TrangCaNhan.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -297,11 +313,14 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1600</DevelopmentServerPort>
+          <DevelopmentServerPort>50654</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

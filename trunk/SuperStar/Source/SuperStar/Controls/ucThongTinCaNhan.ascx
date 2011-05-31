@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucThongTinCaNhan.ascx.cs" Inherits="SuperStar.Controls.ucThongTinCaNhan" %>
 
-<table id="tbThongTinCaNhan" border="0" cellpadding="0" cellspacing="0">
+<table id="tbThongTinCaNhan" border="0" cellpadding="5" cellspacing="0">
     <tr>
         <td align="center" valign="middle" width="30%">
             <asp:Image ID="imgAvatar" runat="server" Height="100px" Width="100px" />
