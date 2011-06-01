@@ -11,7 +11,7 @@
 namespace SuperStar {
     
     
-    public partial class DangSanPham {
+    public partial class ThemTangPham {
         
         /// <summary>
         /// idUCDanhMucSanPham control.

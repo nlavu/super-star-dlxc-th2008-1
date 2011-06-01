@@ -176,6 +176,15 @@ namespace SuperStar.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText dtpThoiGianKTBan;
         
         /// <summary>
+        /// compareKTBan_BDBan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareKTBan_BDBan;
+        
+        /// <summary>
         /// dtpThoiGianBDNhan control.
         /// </summary>
         /// <remarks>
@@ -185,6 +194,15 @@ namespace SuperStar.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText dtpThoiGianBDNhan;
         
         /// <summary>
+        /// compareBDNhan_KTBan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareBDNhan_KTBan;
+        
+        /// <summary>
         /// dtpThoiGianKTNhan control.
         /// </summary>
         /// <remarks>
@@ -192,6 +210,15 @@ namespace SuperStar.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText dtpThoiGianKTNhan;
+        
+        /// <summary>
+        /// compareKTNhan_BDNhan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareKTNhan_BDNhan;
         
         /// <summary>
         /// fileUpload control.
@@ -210,6 +237,105 @@ namespace SuperStar.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtThongTinSP;
+        
+        /// <summary>
+        /// txtTenTangPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTenTangPham;
+        
+        /// <summary>
+        /// lblTenTangPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTenTangPham;
+        
+        /// <summary>
+        /// txtDiemThuongYC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDiemThuongYC;
+        
+        /// <summary>
+        /// lblDiemThuongYC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDiemThuongYC;
+        
+        /// <summary>
+        /// txtSoLuongTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSoLuongTP;
+        
+        /// <summary>
+        /// lblSoLuongTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoLuongTP;
+        
+        /// <summary>
+        /// txtSoLuongToiDa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSoLuongToiDa;
+        
+        /// <summary>
+        /// lblSoLuongTPToiDa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoLuongTPToiDa;
+        
+        /// <summary>
+        /// fileUploadTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadTP;
+        
+        /// <summary>
+        /// lblHinhAnhTP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHinhAnhTP;
+        
+        /// <summary>
+        /// btnThemTangPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnThemTangPham;
         
         /// <summary>
         /// btnDangSanPham control.

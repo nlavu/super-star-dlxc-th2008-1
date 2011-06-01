@@ -17,6 +17,12 @@
         	    <div class="blue">ĐĂNG SẢN PHẨM</div>
                     <h2>
                     </h2>
+                    <h2>
+                    </h2>
+                    <h2>
+                    </h2>
+                    <h2>
+                    </h2>
                 </h2>
            </th>
       	</tr>      
@@ -88,37 +94,83 @@
           <td width="37%" align="right">Thời gian kết thúc bán <span class="mess">(*)</span></td>
           <td width="63%">
             <input type="text" class="datepicker" runat="server" id="dtpThoiGianKTBan" />
-          </td>
-        </tr>
-        
-        <tr>
-          <td width="37%" align="right">Thời gian bắt đầu nhận hàng <span class="mess">(*)</span></td>
-          <td width="63%">
+           <asp:CompareValidator Type="Date" runat="server" ControlToCompare="dtpThoiGianKTBan" Operator="LessThan" 
+                ControlToValidate="dtpThoiGianBDBan" ErrorMessage="Thời gian kết thúc bán phải lớn hơn thời gian bắt đầu bán hàng."
+                ID="compareKTBan_BDBan" Display="Dynamic" SetFocusOnError="false"></asp:CompareValidator>
+          </td></tr><tr>
+          <td width="37%" align="right">Thời gian bắt đầu nhận hàng <span class="mess">(*)</span></td><td width="63%">
             <input type="text" class="datepicker" runat="server" id="dtpThoiGianBDNhan" />
+            <asp:CompareValidator Type="Date" runat="server" ControlToCompare="dtpThoiGianBDNhan" Operator="LessThan" 
+                ControlToValidate="dtpThoiGianKTBan" ErrorMessage="Thời gian bắt đầu nhận hàng phải lớn hơn thời gian kết thúc bán hàng."
+                ID="compareBDNhan_KTBan" Display="Dynamic" SetFocusOnError="false"></asp:CompareValidator>
           </td>
         </tr>
         <tr>
-          <td width="37%" align="right">Thời gian kết thúc nhận hàng <span class="mess">(*)</span></td>
-          <td width="63%">
+          <td width="37%" align="right">Thời gian kết thúc nhận hàng <span class="mess">(*)</span></td><td width="63%">
             <input type="text" class="datepicker" runat="server" id="dtpThoiGianKTNhan" />
+            <asp:CompareValidator Type="Date" runat="server" ControlToCompare="dtpThoiGianKTNhan" Operator="LessThan" 
+                ControlToValidate="dtpThoiGianBDNhan" ErrorMessage="Thời gian kết thúc nhận hàng phải lớn hơn thời gian bắt đầu nhận hàng"
+                ID="compareKTNhan_BDNhan" Display="Dynamic" SetFocusOnError="false"></asp:CompareValidator>
           </td>
         </tr>        
         <tr>
-          <td align="right">Hình ảnh:</td>
-          <td>
+          <td align="right">Hình ảnh:</td><td>
               <asp:FileUpload ID="fileUpload" runat="server" />
           </td>
         </tr>
         
         <tr>
-          <td width="37%" align="right">Thông tin sản phẩm <span class="mess">(*)</span></td>
-          <td width="63%">            
+          <td width="37%" align="right">Thông tin sản phẩm <span class="mess">(*)</span></td><td width="63%">            
             <asp:TextBox TextMode="MultiLine" runat="server" ID="txtThongTinSP" size="70" Columns="40" 
                     Rows="8"/>
           </td>
         </tr>
-      
-      <tr align="center" valign="middle">
+        
+        <tr>
+            <td colspan="2" align ="center">----------------------------------------------------</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><div class="blue">TẶNG PHẨM</div></td></tr>
+        <tr>
+            <td width="37%" align="right">Tên tặng phẩm </td>
+            <td width="63%"><label for="txtTenTangPham"></label>
+                <asp:TextBox TextMode="SingleLine" ID="txtTenTangPham" runat="server" size="30"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblTenTangPham" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+        <tr>
+            <td width="37%" align="right">Điểm thưởng yêu cầu </td>
+            <td width="63%"><label for="txtDiemThuongYC"></label>
+                <asp:TextBox TextMode="SingleLine" ID="txtDiemThuongYC" runat="server" size="30"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblDiemThuongYC" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+        <tr>
+            <td width="37%" align="right">Số lượng </td>
+            <td width="63%"><label for="txtSoLuong"></label>
+                <asp:TextBox TextMode="SingleLine" ID="txtSoLuongTP" runat="server" size="30"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSoLuongTP" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+        <tr>
+            <td width="37%" align="right">Số lượng tối đa mỗi đơn hàng có thể chọn</td><td width="63%"><label for="txtSoLuongToiDa"></label>
+                <asp:TextBox TextMode="SingleLine" ID="txtSoLuongToiDa" runat="server" size="30"/> 
+                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSoLuongTPToiDa" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+        <tr>
+          <td align="right">Hình ảnh tặng phẩm:</td><td>
+              <asp:FileUpload ID="fileUploadTP" runat="server" />
+              &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblHinhAnhTP" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+        <tr align="center" valign="middle">
+            <td colspan="2">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnThemTangPham" runat="server" Text="Thêm" 
+                    onclick="btnThemTangPham_Click"/> &nbsp;&nbsp;&nbsp;&nbsp;
+        	</td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" align="center">----------------------------------------------------</td>
+        </tr>
+        <tr align="center" valign="middle">
         <td colspan="2">
         	<asp:Button ID="btnDangSanPham" runat="server" Text="Đăng Sản Phẩm" 
         	        onclick="btnDangSanPham_Click" /> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -127,3 +179,5 @@
       </tr>
     </table>
 </asp:Panel>
+
+
