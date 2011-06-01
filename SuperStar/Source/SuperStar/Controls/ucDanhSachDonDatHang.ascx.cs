@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
 
 namespace SuperStar.Controls
 {
@@ -17,7 +19,16 @@ namespace SuperStar.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            // kiểm tra đã đăng nhập chưa
+            int iDaDangNhap = (Int32)Session["IsLogin"];
+            if (iDaDangNhap == 0)
+            {
+                pnlDSDonDatHang.Visible = false;
+                return;
+            }
+            List<BUS.DonDatHang> lstDonDatHang = BUS.DonDatHang.LayDSDonDatHangTheoMaKhachHang((Int32)Session["Id"]);
+            accordionDSDDH.DataSource = lstDonDatHang;
         }
     }
 }

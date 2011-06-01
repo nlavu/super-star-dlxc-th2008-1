@@ -886,3 +886,32 @@ a:hover, a:active, a:focus{
 	font-weight:bold;
 	line-height : 2em;	
 }
+
+
+.table-danhsach
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 0px;	
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #EFEFEF;
+}
+.table-danhsach th
+{
+	padding: 5px 10px 5px 10px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #039;
+	border-bottom: 1px dashed #69c;
+}
+.table-danhsach td
+{
+	padding: 3px 5px 3px 5px;
+	color: #669;
+}
+.table-danhsach tbody tr:hover td
+{
+	color: #339;
+	background: #d0dafd;
+}
