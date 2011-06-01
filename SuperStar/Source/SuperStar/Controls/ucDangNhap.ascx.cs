@@ -72,11 +72,11 @@ namespace SuperStar.Controls
                     Session["Id"] = tk.MaTaiKhoan;
                     Session["UserName"] = tk.TenTaiKhoan;
 
-                    if (tk.LoaiTK == 0)
-                        Session["Authentication"] = "Admin";
                     if (tk.LoaiTK == 1)
                         Session["Authentication"] = "QuanLy";
                     if (tk.LoaiTK == 2)
+                        Session["Authentication"] = "DaiLy";
+                    if (tk.LoaiTK == 3)
                         Session["Authentication"] = "KhachHang";
                     
 

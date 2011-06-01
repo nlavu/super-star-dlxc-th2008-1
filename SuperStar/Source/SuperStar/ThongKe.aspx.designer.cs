@@ -11,7 +11,7 @@
 namespace SuperStar {
     
     
-    public partial class DangSanPham {
+    public partial class ThongKe {
         
         /// <summary>
         /// idUCDanhMucSanPham control.
@@ -23,21 +23,12 @@ namespace SuperStar {
         protected global::SuperStar.Controls.ucDanhMucSanPham idUCDanhMucSanPham;
         
         /// <summary>
-        /// ucDangSanPham control.
+        /// UCThongTinTaiKhoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SuperStar.Controls.ucDangSanPham ucDangSanPham;
-        
-        /// <summary>
-        /// UcThongTinTaiKhoan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SuperStar.Controls.ucThongTinTaiKhoan UcThongTinTaiKhoan;
+        protected global::SuperStar.Controls.ucThongTinTaiKhoan UCThongTinTaiKhoan;
     }
 }

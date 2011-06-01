@@ -1,13 +1,8 @@
-﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="TrangCaNhan.aspx.cs" 
-Inherits="SuperStar.TrangCaNhan" MasterPageFile="~/MasterPages/Customer.Master" Title="Trang cá nhân :: SuperStar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ThongKe.aspx.cs" Inherits="SuperStar.ThongKe" 
+    MasterPageFile="~/MasterPages/Customer.Master" Title="Thống kê :: SuperStar"%>
 
 <%@ Register Src="~/Controls/ucDanhMucSanPham.ascx" TagName="DanhMucSanPham" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucThongTinCaNhan.ascx" TagName="ThongTinCaNhan" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucDanhSachDonDatHang.ascx" TagName="DSDonDatHang" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucQuanLySanPham.ascx" TagName="QuanLySanPham" TagPrefix="UC" %>
-<%@ Register Src="~/Controls/ucQuanLyTaiKhoan.ascx" TagName="QuanLyTaiKhoan" TagPrefix="UC" %>
-
 
 <asp:Content ID="idHeader" ContentPlaceHolderID="ContentPlaceHolder_header" runat="server">
     <!--header-->
@@ -34,16 +29,7 @@ Inherits="SuperStar.TrangCaNhan" MasterPageFile="~/MasterPages/Customer.Master" 
 <asp:Content ID="idPrimaryContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder_primary_content">
     <div class="primary-content"> 
   		<div>
-  		    <UC:ThongTinCaNhan runat="server" ID="ucThongTinCaNhan"/>
-  		</div>
-  		<div>
-  		    <UC:DSDonDatHang runat="server" ID="ucDSDonDatHang"/>
-  		</div>
-  		<div>
-  		    <UC:QuanLySanPham runat="server" ID="ucQuanLySanPham"/>
-  		</div>
-  		<div>
-  		    <UC:QuanLyTaiKhoan runat="server" ID="ucQuanLyTaiKhoan"/>
+  		    
   		</div>
     </div>
     <!--emd primary-content-->
@@ -61,4 +47,3 @@ Inherits="SuperStar.TrangCaNhan" MasterPageFile="~/MasterPages/Customer.Master" 
 
 
         
-
