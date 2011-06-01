@@ -71,23 +71,33 @@ namespace SuperStar.Controls
 
         protected void btnHuyDDH_Click(object sender, EventArgs e)
         {
-            Button btnHuy = (Button)sender;
+            ImageButton btnHuy = (ImageButton)sender;
             DataListItem dlItem = (DataListItem)btnHuy.Parent;
             HiddenField hidMaDDH = dlItem.FindControl("hidMaDDH") as HiddenField;
 
-            if (BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value)).TrangThai == 6)
+            int trangThai = BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value)).TrangThai;
+            if (trangThai > 1)
             {
+                lblThongBao.Text = "Không thể thực hiện thao tác. Đơn hàng " + hidMaDDH.Value + " đã " + TrangThai.LayTrangThaiTheoMa(trangThai).TenTrangThai + ".";
+                pnlThongBao.Visible = true;
                 return;
             }
 
             int res = BUS.DonDatHang.HuyDonDatHang(int.Parse(hidMaDDH.Value));
             if (res >= 1)
             {
-                lblThongBao.Text = "Hủy đơn hàng thành công.";
+                lblThongBao.Text = "Hủy đơn hàng " + hidMaDDH.Value + " thành công.";
                 pnlThongBao.Visible = true;
 
+                //load lại ds đơn đặt hàng
+                List<BUS.DonDatHang> lstDonDatHang = BUS.DonDatHang.LayDSDonDatHangTheoMaKhachHang((Int32)Session["Id"]);
+                dlDsDonDatHang_KH.DataSource = lstDonDatHang;
+                dlDsDonDatHang_KH.DataBind();
+                dlDsDonDatHang_KH.Visible = true;
+
+                return;                
             }
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         protected void dlDsDonDatHang_DaiLy_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -99,7 +109,27 @@ namespace SuperStar.Controls
 
             DataList dl = e.Item.FindControl("dlDSChiTietDDH") as DataList;
             dl.DataSource = lstChiTietDDH;
-            dl.DataBind(); 
+            dl.DataBind();
+
+            ImageButton imgNhanHang = e.Item.FindControl("imgBtnNhanHang") as ImageButton;
+            int trangThai = BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value)).TrangThai;
+            switch (trangThai)
+            {
+                case 1:
+                case 2:
+                case 3:
+                    imgNhanHang.ImageUrl = "~/image/uncheckButton.gif";
+                    imgNhanHang.AlternateText = "Chưa nhận hàng";
+                    break;
+                case 4:
+                    imgNhanHang.ImageUrl = "~/image/checkButton.gif";
+                    imgNhanHang.AlternateText = "Đã nhận hàng";
+                    break;
+                case 5:
+                    imgNhanHang.ImageUrl = "~/image/canceButton.jpg";
+                    imgNhanHang.AlternateText = "Đã hết thời gian nhận hàng";
+                    break;
+            }
         }
 
         protected void dlDSDonDatHang_QuanLy_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -115,6 +145,72 @@ namespace SuperStar.Controls
         }
 
 
+        protected void btnCapNhatDDH_Click(object sender, EventArgs e)
+        {
+            ImageButton btnCapNhat = (ImageButton)sender;
+            DataListItem dlItem = (DataListItem)btnCapNhat.Parent;
+            HiddenField hidMaDDH = dlItem.FindControl("hidMaDDH") as HiddenField;
+
+            int trangThai = BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value)).TrangThai;
+            if (trangThai > 1)
+            {
+                lblThongBao.Text = "Không thể thực hiện thao tác. Đơn hàng "+hidMaDDH.Value+" đã " + TrangThai.LayTrangThaiTheoMa(trangThai).TenTrangThai + ".";
+                pnlThongBao.Visible = true;
+                return;
+            }
+
+            //int res = BUS.DonDatHang.HuyDonDatHang(int.Parse(hidMaDDH.Value));
+            //if (res >= 1)
+            //{
+            //    lblThongBao.Text = "Hủy đơn hàng " + hidMaDDH.Value + " thành công.";
+            //    pnlThongBao.Visible = true;
+            //    return;                
+            //}
+            //throw new NotImplementedException();
+        }
+        protected void btnNhanHang_Click(object sender, EventArgs e)
+        {
+            ImageButton btnNhanHang = (ImageButton)sender;
+            DataListItem dlItem = (DataListItem)btnNhanHang.Parent;
+            HiddenField hidMaDDH = dlItem.FindControl("hidMaDDH") as HiddenField;
+
+            int trangThai = BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value)).TrangThai;
+            if (trangThai < 3)
+            {
+                lblThongBao.Text = "Chưa đến thời gian nhận hàng.";
+                pnlThongBao.Visible = true;
+                return;
+            }
+            if (trangThai == 3)
+            {
+                BUS.DonDatHang ddh = BUS.DonDatHang.LayDonDatHangTheoMaDDH(int.Parse(hidMaDDH.Value));
+                ddh.NgayNhanHang = DateTime.Now;
+                ddh.TrangThai = 4;
+                ddh.CapNhatTrangThaiDonDatHang();
+                ddh.CapNhatNgayNhanHangCuaDonDatHang();
+                
+                lblThongBao.Text = "Đơn hàng số "+hidMaDDH.Value+" đã giao.";
+                pnlThongBao.Visible = true;
+
+                //load lại ds đơn đặt hàng
+                List<BUS.DonDatHang> lstDonDatHang = BUS.DonDatHang.LayDSDonDatHangTheoMaDaiLyNhanHang((Int32)Session["Id"]);
+                dlDsDonDatHang_DaiLy.DataSource = lstDonDatHang;
+                dlDsDonDatHang_DaiLy.DataBind();
+                pnlDSDonDatHang_DaiLy.Visible = true;
+
+                return;
+            }
+            if (trangThai == 4)
+            {
+                lblThongBao.Text = "Không thể thực hiện giao tác.Đơn hàng số " + hidMaDDH.Value + " đã giao.";
+                pnlThongBao.Visible = true;
+            }
+            if (trangThai == 5)
+            {
+                lblThongBao.Text = "Đơn hàng số " + hidMaDDH.Value + " đã hết thời hạn nhận hàng. Không thể thực hiện giao tác.";
+                pnlThongBao.Visible = true;
+            }           
+        }
 
     }
 }

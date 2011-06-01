@@ -9,7 +9,7 @@
             </td>
         </tr>
         <tr>
-            <td align="left" class="link-3" >
+            <td align="left" class="mess" >
                 <asp:Label runat="server" ID="lblThongBao"></asp:Label>
             </td>
         </tr>
@@ -32,32 +32,40 @@
                 Trạng thái</th>
             <th>
                 Hủy</th>
+            <th>
+                Cập nhật</th>
            
         </tr>
     </thead>
      <asp:DataList ID="dlDsDonDatHang_KH" runat="server" RepeatColumns="1" RepeatDirection="Horizontal" 
                     RepeatLayout="Flow" CellPadding="0" BorderWidth="0px" 
-                    meta:resourcekey="dlDanhSachTangPhamResource1">
+                    meta:resourcekey="dlDanhSachTangPhamResource1" 
+        onitemdatabound="dlDsDonDatHang_KH_ItemDataBound">
           <ItemTemplate>
                     <tr>
-                        <td><%#Eval("MaDDH") %></td>
+                        <td align="center"><%#Eval("MaDDH") %></td>
                         <td><%#Eval("TenSanPham") %></td>
-                        <td><%#Eval("SoLuongDat") %></td>
-                        <td><%#Eval("ThanhTien") %> </td>
-                        <td><%#Eval("TenTrangThai") %></td>
-                        <td><asp:Button ID="btnHuyDDH" runat="server" Text="Hủy" OnClick="btnHuyDDH_Click" /></td>
-                    </tr> 
-                    <tr>
-                        <td colspan="6">
-                            Ngày đặt: <%#Eval("NgayDat") %>
-                            <br />
-                            Đại lý nhận hàng: <%#Eval("TenDaiLy")%>
-                            <br />
-                            Thời gian nhận hàng từ ngày <%#Eval("NhanHangTuNgay") %> đến ngày <%#Eval("NhanHangDenNgay") %>
+                        <td align="center"><%#Eval("SoLuongDat") %></td>
+                        <td align="right"><%#Eval("ThanhTien") %> </td>
+                        <td align="center"><%#Eval("TenTrangThai") %></td>
+                        <td style="color:#E9F5F9;" align="center">
+                            <asp:ImageButton ID="imgBtnHuy" ImageUrl="~/image/deleteButton.png" runat="server" Text="Hủy" OnClick="btnHuyDDH_Click" />
+                        </td>
+                        <td style="color:#E9F5F9;" align="center">
+                            <asp:ImageButton ID="imgBtnCapNhat" ImageUrl="~/image/editButton.gif" runat="server" Text="Cập nhật" OnClick="btnCapNhatDDH_Click" />
                         </td>
                     </tr> 
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
+                            <div class="info-line">Ngày đặt: <%#Eval("NgayDat") %></div>
+                            
+                            <div class="info-line"> Đại lý nhận hàng: <%#Eval("TenDaiLy")%></div>
+                            
+                            <div class="info-line">Thời gian nhận hàng từ ngày <%#Eval("NhanHangTuNgay") %> đến ngày <%#Eval("NhanHangDenNgay") %></div>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td colspan="7">
                             <table width="100%" cellpadding="5" cellspacing ="0">
                             <asp:HiddenField runat="server" ID="hidMaDDH" Value='<%#Eval("MaDDH") %>' />                            
                             <asp:DataList ID="dlDSChiTietDDH" runat="server" RepeatColumns="1" RepeatDirection="Horizontal" 
@@ -109,16 +117,19 @@
         onitemdatabound="dlDsDonDatHang_DaiLy_ItemDataBound">
            <ItemTemplate>
                     <tr>
-                        <td><%#Eval("MaDDH") %></td>
+                        <td align="center"><%#Eval("MaDDH") %></td>
                         <td><%#Eval("TenSanPham") %></td>
-                        <td><%#Eval("SoLuongDat") %></td>
-                        <td><%#Eval("ThanhTien") %> </td>
-                        <td><%#Eval("TenTrangThai") %></td>
-                        <td><asp:Button ID="btnHuyDDH" runat="server" Text="Hủy" OnClick="btnHuyDDH_Click" /></td>
+                        <td align="center"><%#Eval("SoLuongDat") %></td>
+                        <td align="right"><%#Eval("ThanhTien") %> </td>
+                        <td align="center"><%#Eval("TenTrangThai") %></td>
+                        <td style="color:#E9F5F9;" align="center">
+                            <asp:ImageButton ID="imgBtnNhanHang" runat="server" Text="Hủy" OnClick="btnNhanHang_Click" />
+                        </td>                       
                     </tr> 
                     <tr>
                         <td colspan="6">
-                            Ngày đặt: <%#Eval("NgayDat") %>
+                            <div class="info-line">Ngày đặt: <%#Eval("NgayDat") %></div>
+                            
                         </td>
                     </tr> 
                     <tr>
@@ -167,6 +178,8 @@
                 Trạng thái</th>
             <th>
                 Hủy</th>
+            <th>
+                Cập nhật</th>
            
         </tr>
     </thead>
@@ -176,24 +189,29 @@
         onitemdatabound="dlDSDonDatHang_QuanLy_ItemDataBound">
            <ItemTemplate>
                     <tr>
-                        <td><%#Eval("MaDDH") %></td>
+                        <td align="center"><%#Eval("MaDDH") %></td>
                         <td><%#Eval("TenSanPham") %></td>
-                        <td><%#Eval("SoLuongDat") %></td>
-                        <td><%#Eval("ThanhTien") %> </td>
-                        <td><%#Eval("TenTrangThai") %></td>
-                        <td><asp:Button ID="btnHuyDDH" runat="server" Text="Hủy" OnClick="btnHuyDDH_Click" /></td>
+                        <td align="center"><%#Eval("SoLuongDat") %></td>
+                        <td align="right"><%#Eval("ThanhTien") %> </td>
+                        <td align="center"><%#Eval("TenTrangThai") %></td>
+                        <td style="color:#E9F5F9;" align="center">
+                            <asp:ImageButton ID="imgBtnHuy" ImageUrl="~/image/deleteButton.png" runat="server" Text="Hủy" OnClick="btnHuyDDH_Click" />
+                        </td>
+                        <td style="color:#E9F5F9;" align="center">
+                            <asp:ImageButton ID="imgBtnCapNhat" ImageUrl="~/image/editButton.gif" runat="server" Text="Cập nhật" OnClick="btnCapNhatDDH_Click" />
+                        </td>                      
                     </tr> 
                     <tr>
-                        <td colspan="6">
-                            Ngày đặt: <%#Eval("NgayDat") %>
-                            <br />
-                            Đại lý nhận hàng: <%#Eval("TenDaiLy")%>
-                            <br />
-                            Thời gian nhận hàng từ ngày <%#Eval("NhanHangTuNgay") %> đến ngày <%#Eval("NhanHangDenNgay") %>
+                        <td colspan="7">
+                            <div class="info-line">Ngày đặt: <%#Eval("NgayDat") %></div>
+                            
+                            <div class="info-line"> Đại lý nhận hàng: <%#Eval("TenDaiLy")%></div>
+                            
+                            <div class="info-line">Thời gian nhận hàng từ ngày <%#Eval("NhanHangTuNgay") %> đến ngày <%#Eval("NhanHangDenNgay") %></div>
                         </td>
                     </tr> 
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
                             <table width="100%" cellpadding="5" cellspacing ="0">
                             <asp:HiddenField runat="server" ID="hidMaDDH" Value='<%#Eval("MaDDH") %>' />                            
                             <asp:DataList ID="dlDSChiTietDDH" runat="server" RepeatColumns="1" RepeatDirection="Horizontal" 

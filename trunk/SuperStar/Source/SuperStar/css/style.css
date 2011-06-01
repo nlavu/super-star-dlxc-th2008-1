@@ -893,14 +893,14 @@ a:hover, a:active, a:focus{
 	font-size: 12px;
 	margin: 0px;	
 	text-align: left;
-	border-collapse: collapse;
-	border: 1px solid #EFEFEF;
+	border-collapse: collapse;	
 }
 .table-danhsach th
 {
 	padding: 5px 10px 5px 10px;
 	font-weight: normal;
 	font-size: 14px;
+	background: #b9c9fe;
 	color: #039;
 	border-bottom: 1px dashed #69c;
 }
@@ -908,9 +908,10 @@ a:hover, a:active, a:focus{
 {
 	padding: 3px 5px 3px 5px;
 	color: #669;
+	border-top: 1px solid #e8edff;
 }
 .table-danhsach tbody tr:hover td
 {
 	color: #339;
-	background: #d0dafd;
+	background: #eff2ff;
 }
