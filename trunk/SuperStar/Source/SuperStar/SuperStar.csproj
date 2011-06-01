@@ -145,6 +145,13 @@
     <Compile Include="Controls\ucSanPhamNoiBat.ascx.designer.cs">
       <DependentUpon>ucSanPhamNoiBat.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucThemTangPham.ascx.cs">
+      <DependentUpon>ucThemTangPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucThemTangPham.ascx.designer.cs">
+      <DependentUpon>ucThemTangPham.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucThongTinCaNhan.ascx.cs">
       <DependentUpon>ucThongTinCaNhan.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,6 +233,13 @@
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ThemTangPham.aspx.cs">
+      <DependentUpon>ThemTangPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemTangPham.aspx.designer.cs">
+      <DependentUpon>ThemTangPham.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TrangCaNhan.aspx.cs">
       <DependentUpon>TrangCaNhan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,9 +309,12 @@
     <Content Include="Controls\ucDanhSachDonDatHang.ascx" />
     <Content Include="Controls\ucQuanLySanPham.ascx" />
     <Content Include="Controls\ucQuanLyTaiKhoan.ascx" />
+    <Content Include="Controls\ucThemTangPham.ascx" />
     <Content Include="Controls\ucThongTinCaNhan.ascx" />
     <Content Include="DangSanPham.aspx" />
+    <Content Include="Path_Gift.xml" />
     <Content Include="Path_Product.xml" />
+    <Content Include="ThemTangPham.aspx" />
     <Content Include="TrangCaNhan.aspx" />
   </ItemGroup>
   <ItemGroup>
