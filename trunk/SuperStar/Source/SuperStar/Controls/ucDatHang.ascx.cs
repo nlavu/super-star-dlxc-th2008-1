@@ -44,7 +44,7 @@ namespace SuperStar.Controls
                 if (!Page.IsPostBack)
                 {
                     txtSoLuongMuaSP.Text = "1";
-                    lblThanhTien.Text = String.Format("{0:N}", g_SanPham.DonGia);
+                    lblThanhTien.Text = String.Format("{0:N0}", g_SanPham.DonGia);
                     lblTongDiemThuong.Text = g_SanPham.DiemThuong.ToString();
                     lblDiemThuongConLai.Text = g_SanPham.DiemThuong.ToString();
 
@@ -91,7 +91,7 @@ namespace SuperStar.Controls
                 lblLoiSanPham.Text = "Số lượng sản phẩm phải nhỏ hơn số lượng tồn : " + g_SanPham.SoLuongTon.ToString() ;
                 return;
             }
-            lblThanhTien.Text = String.Format("{0:N}",g_SanPham.DonGia * soluong);
+            lblThanhTien.Text = String.Format("{0:N0}",g_SanPham.DonGia * soluong);
             lblTongDiemThuong.Text = (g_SanPham.DiemThuong * soluong).ToString();
             //tính lại điểm thưởng còn lại
             lblDiemThuongConLai.Text = (g_SanPham.DiemThuong * soluong).ToString();
@@ -106,7 +106,7 @@ namespace SuperStar.Controls
             int tongDiemThuong = int.Parse(lblTongDiemThuong.Text);
             for (int i = 0; i < dlDanhSachTangPham.Items.Count; i++)
             {
-                TextBox txtSoLuongTP = dlDanhSachTangPham.Items[i].FindControl("txtSoLuongMuaTP") as TextBox;
+                TextBox txtSoLuongTP = dlDanhSachTangPham.Items[i].FindControl("txtSoLuongTP") as TextBox;
                 int soluongTP = 0;
                 if (!int.TryParse(txtSoLuongTP.Text, out soluongTP))
                 {
@@ -120,12 +120,13 @@ namespace SuperStar.Controls
                 }
 
                 HiddenField hidField = dlDanhSachTangPham.Items[i].FindControl("hidMaTangPham") as HiddenField;
-                TangPham tangPham = TangPham.LayTangPhamTheoMa(int.Parse(hidField.Value));
+                TangPham tangPham = new TangPham();
+                tangPham = TangPham.LayTangPhamTheoMa(int.Parse(hidField.Value));
 
                 // kiểm tra số lượng tối đa
                 if (soluongTP > tangPham.SoLuongToiDa)
                 {
-                    lblLoiChonTP.Text = "Số lượng tặng phẩm "+ tangPham.TenTangPham+" phải nhỏ hơn hoặc bằng số lượng tối đa.";
+                    lblLoiChonTP.Text = "Số lượng tặng phẩm " + tangPham.TenTangPham + " phải nhỏ hơn hoặc bằng số lượng tối đa.";
                     txtSoLuongTP.Focus();
                     return;
                 }
@@ -140,8 +141,8 @@ namespace SuperStar.Controls
                 ChiTietDonDatHang ctDDH = new ChiTietDonDatHang();
                 ctDDH.MaTangPham = tangPham.MaTangPham;
                 ctDDH.SoLuong = soluongTP;
-                
-                tongDiemThuongYC += tangPham.DiemThuongYC*ctDDH.SoLuong;
+
+                tongDiemThuongYC += tangPham.DiemThuongYC * ctDDH.SoLuong;
                 // kiểm tra tổng điểm yêu cầu so với điểm thưởng người mua có
                 if (tongDiemThuongYC > tongDiemThuong)
                 {

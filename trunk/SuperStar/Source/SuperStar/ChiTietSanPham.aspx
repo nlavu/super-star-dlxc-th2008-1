@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DangSanPham.aspx.cs" Inherits="SuperStar.SanPham"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="SuperStar.ChiTietSanPham"
 MasterPageFile="~/MasterPages/Customer.Master" Title="Chi tiết sản phẩm :: SuperStar" %>
 
 

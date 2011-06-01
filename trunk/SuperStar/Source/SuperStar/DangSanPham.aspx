@@ -3,6 +3,7 @@ MasterPageFile="~/MasterPages/Customer.Master" Title="Đăng sản phẩm :: Sup
 
 
 
+
 <%@ Register Src="~/Controls/ucDanhMucSanPham.ascx" TagName="DanhMucSanPham" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucThongTinTaiKhoan.ascx" TagName="ThongTinTaiKhoan" TagPrefix="UC" %>
 <%@ Register Src="~/Controls/ucDangSanPham.ascx" TagName="DangSanPham" TagPrefix="UC" %>

@@ -19,7 +19,7 @@
     <table width="100%" style="border-bottom: 1px dashed #CCC" cellspacing="0" cellpadding="5">
         <tr>
             <th align="left">
-                <h4>KẾT QUẢ ĐẶT HÀNG</h4>
+                <div class="order-title">KẾT QUẢ ĐẶT HÀNG</div>
             </th>
         </tr>
         <tr>
@@ -97,7 +97,7 @@
                         </td>
                         <td>
                             <asp:TextBox ID="txtSoLuongTP" runat="server" size="10" MaxLength="5" 
-                                meta:resourcekey="txtSoLuongMuaTPResource1" TextMode="SingleLine" AutoPostBack="true">
+                                meta:resourcekey="txtSoLuongMuaTPResource1" TextMode="SingleLine" AutoPostBack="false">
                             </asp:TextBox>
                             <asp:HiddenField ID="hidMaTangPham" Value='<%# Eval("MaTangPham") %>' runat="server"/>
                         </td>
@@ -118,8 +118,8 @@
                             <%#Eval("SoLuongToiDa")%>
                         </td>
                         <td>
-                             <asp:TextBox ID="txtSoLuongMuaTP" runat="server" size="10" MaxLength="5" 
-                                meta:resourcekey="txtSoLuongMuaTPResource1" TextMode="SingleLine" AutoPostBack="true" >
+                             <asp:TextBox ID="txtSoLuongTP" runat="server" size="10" MaxLength="5" 
+                                meta:resourcekey="txtSoLuongMuaTPResource1" TextMode="SingleLine" AutoPostBack="false" >
                             </asp:TextBox>
                             <asp:HiddenField ID="hidMaTangPham" Value='<%# Eval("MaTangPham") %>' runat="server" />
                         </td>

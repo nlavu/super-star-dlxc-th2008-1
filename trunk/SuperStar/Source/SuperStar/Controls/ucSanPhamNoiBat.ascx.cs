@@ -26,7 +26,7 @@ namespace SuperStar.Controls
             imgSanPham.ImageUrl = sanPham.HinhAnh;
             hpTenSanPham.Text = sanPham.TenSanPham;
             hpTenSanPham.NavigateUrl = "../ChiTietSanPham.aspx?maSanPham="+sanPham.MaSanPham.ToString();
-            lbGiaSanPham.Text = sanPham.DonGia.ToString();
+            lbGiaSanPham.Text = String.Format("{0:N0}",sanPham.DonGia);
             lbDiemThuong.Text = sanPham.DiemThuong.ToString();
             lbSoLuongSPDaBan.Text = (sanPham.SoLuongSP - sanPham.SoLuongTon).ToString();
             lbSoLuongTon.Text = sanPham.SoLuongTon.ToString();

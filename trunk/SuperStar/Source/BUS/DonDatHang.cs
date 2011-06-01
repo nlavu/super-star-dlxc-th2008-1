@@ -19,10 +19,47 @@ namespace BUS
         private int maDaiLy = int.MinValue;
         private DateTime ngayNhanHang = DateTime.MaxValue;
         private float thanhTien = float.MinValue;
+        private string tenDaiLy = String.Empty;
+        private string tenSanPham = String.Empty;
+        private DateTime nhanHangTuNgay = DateTime.MaxValue;
+        private DateTime nhanHangDenNgay = DateTime.MaxValue;
+        private string tenTrangThai = String.Empty;       
+
         #endregion
 
         #region Properties
 
+        public string TenTrangThai
+        {
+            get { return tenTrangThai; }
+            set { tenTrangThai = value; }
+        }
+
+        public DateTime NhanHangDenNgay
+        {
+            get { return nhanHangDenNgay; }
+            set { nhanHangDenNgay = value; }
+        }
+
+        public DateTime NhanHangTuNgay
+        {
+            get { return nhanHangTuNgay; }
+            set { nhanHangTuNgay = value; }
+        }
+
+
+        public string TenSanPham
+        {
+            get { return tenSanPham; }
+            set { tenSanPham = value; }
+        }
+
+        public string TenDaiLy
+        {
+            get { return tenDaiLy; }
+            set { tenDaiLy = value; }
+        }
+        
         public int MaDDH
         {
             get { return maDDH; }
@@ -195,6 +232,58 @@ namespace BUS
             }
             return res;
         }
+        /// <summary>
+        /// Lấy ds đơn đặt hàng 
+        /// Thu Hà  : 1/6/2011
+        /// </summary>
+        /// <returns></returns>
+        public static List<DonDatHang> LayDSDonDatHang()
+        {
+            List<DonDatHang> lstDonDatHang = new List<DonDatHang>();
+
+            try
+            {                
+                DataTable dtDonDatHang = new DataTable();
+                dtDonDatHang = SqlDataAccessHelper.ExecuteQuery("spLayDSDonDatHang");
+
+                foreach (DataRow dtRow in dtDonDatHang.Rows)
+                {
+                    DonDatHang donDatHang = new DonDatHang();
+                    donDatHang.MaDDH = int.Parse(dtRow["MaDDH"].ToString());
+                    donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
+                    donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
+                    donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
+                    donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
+                    donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
+                    donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
+                    donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
+
+                    lstDonDatHang.Add(donDatHang);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                lstDonDatHang = new List<DonDatHang>();
+                throw e;
+            }
+            return lstDonDatHang;
+        }
 
         /// <summary>
         /// Lấy ds đơn đặt hàng theo mã sản phẩm
@@ -220,10 +309,23 @@ namespace BUS
                     donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
                     donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
                     donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
                     donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
                     donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
                     donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
-                    donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
                     donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
 
                     lstDonDatHang.Add(donDatHang);
@@ -242,6 +344,7 @@ namespace BUS
         /// <summary>
         /// Lấy ds đơn đặt hàng theo mã khách hàng
         /// Ngọc Hà :28/5/2011
+        /// Edit    : Thu Hà - 1/6/2011
         /// </summary>
         /// <param name="maKH">Mã khách hàng</param>
         /// <returns></returns>
@@ -252,7 +355,7 @@ namespace BUS
             try
             {
                 List<SqlParameter> lstParams = new List<SqlParameter>();
-                lstParams.Add(new SqlParameter("@makhachang", maKH));
+                lstParams.Add(new SqlParameter("@makhachhang", maKH));
                 DataTable dtDonDatHang = new DataTable();
                 dtDonDatHang = SqlDataAccessHelper.ExecuteQuery("spLayDSDonDatHangTheoMaKhachHang", lstParams);
 
@@ -264,10 +367,23 @@ namespace BUS
                     donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
                     donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
                     donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
                     donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
                     donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
                     donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
-                    donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
                     donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
 
                     lstDonDatHang.Add(donDatHang);
@@ -307,10 +423,23 @@ namespace BUS
                     donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
                     donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
                     donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
                     donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
                     donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
                     donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
-                    donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
                     donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
 
                     lstDonDatHang.Add(donDatHang);
@@ -329,6 +458,8 @@ namespace BUS
         /// <summary>
         /// Lấy đơn đặt hàng theo mã ddh
         /// Ngọc Hà :28/5/2011
+        /// Thu Ha
+        /// 1/6/2011
         /// </summary>
         /// <param name="maddh">mã đơn đặt hàng</param>
         /// <returns></returns>
@@ -351,10 +482,25 @@ namespace BUS
                     donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
                     donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
                     donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    // thu ha
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
+                    
                     donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
                     donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
                     donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
-                    donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
                     donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
 
                 }
@@ -392,10 +538,23 @@ namespace BUS
                     donDatHang.NgayDat = DateTime.Parse(dtRow["NgayDat"].ToString());
                     donDatHang.SoLuongDat = int.Parse(dtRow["SoLuongDat"].ToString());
                     donDatHang.TrangThai = int.Parse(dtRow["TrangThai"].ToString());
+                    donDatHang.TenTrangThai = BUS.TrangThai.LayTrangThaiTheoMa(donDatHang.TrangThai).TenTrangThai;
                     donDatHang.MaKhachHang = int.Parse(dtRow["MaKhachHang"].ToString());
                     donDatHang.MaSanPham = int.Parse(dtRow["MaSanPham"].ToString());
+                    donDatHang.TenSanPham = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).TenSanPham;
                     donDatHang.MaDaiLy = int.Parse(dtRow["MaDaiLy"].ToString());
-                    donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    donDatHang.TenDaiLy = BUS.DaiLy.LayThongTinDaiLyTheoMa(donDatHang.MaDaiLy).TenDaiLy;
+                    donDatHang.NhanHangTuNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianBD_NhanHang;
+                    donDatHang.NhanHangDenNgay = BUS.SanPham.LaySanPhamTheoMa(donDatHang.MaSanPham).ThoiGianKT_NhanHang;
+
+                    try
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse(dtRow["NgayNhanHang"].ToString());
+                    }
+                    catch
+                    {
+                        donDatHang.NgayNhanHang = DateTime.Parse("1/1/1900");
+                    }
                     donDatHang.ThanhTien = float.Parse(dtRow["ThanhTien"].ToString());
 
                     lstDonDatHang.Add(donDatHang);
