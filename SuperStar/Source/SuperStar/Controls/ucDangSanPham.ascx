@@ -2,8 +2,9 @@
 
 <asp:Panel runat="server" ID="pnlThongBao">
     <table width="100%" style="border-bottom: 1px dashed #CCC" cellspacing="0" cellpadding="5">
-    <tr><td align="center"><div class="blue">Bạn không đủ quyền để truy cập vào khu vực này</div></td></tr>
-    <tr><td align="center"><a href="../Index.aspx">Click vào đây để về trang chủ</a></td></tr>
+    <tr><td align="center"><div class="boxTitle">THÔNG BÁO</div></td></tr>
+    <tr><td align="center"><div class="blue"><asp:Label runat="server" ID="lblThongBao"></asp:Label></div></td></tr>
+    <tr><td align="center"><asp:HyperLink ID="hpRedirect" runat="server" ></asp:HyperLink></td></tr>
     </table>
 </asp:Panel>
 
@@ -14,6 +15,8 @@
         	<th align="center" colspan="2">
         	    <h2>
         	    <div class="blue">ĐĂNG SẢN PHẨM</div>
+                    <h2>
+                    </h2>
                 </h2>
            </th>
       	</tr>      
@@ -44,7 +47,7 @@
                 <asp:RegularExpressionValidator ID="validatorDonGia" runat="server" 
                     ControlToValidate="txtDonGia" Display="Dynamic" 
                     ErrorMessage="Đơn giá chỉ chứa số" 
-                    SetFocusOnError="True" ValidationExpression="[0-9,,]"></asp:RegularExpressionValidator>
+                    SetFocusOnError="True" ValidationExpression="^\s*\d+\s*$"></asp:RegularExpressionValidator>
             
             </td>
           </tr>      
@@ -59,7 +62,7 @@
                  <asp:RegularExpressionValidator ID="validatorSoLuong" runat="server" 
                     ControlToValidate="txtSoLuong" Display="Dynamic" 
                     ErrorMessage="Số lượng chỉ chứa số" 
-                    SetFocusOnError="True" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
+                    SetFocusOnError="True" ValidationExpression="^\s*\d+\s*$"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -72,32 +75,32 @@
               <asp:RegularExpressionValidator ID="validatorDiemThuong" runat="server" 
                     ControlToValidate="txtDiemThuong" Display="Dynamic" 
                     ErrorMessage="Điểm thưởng chỉ chứa số" 
-                    SetFocusOnError="True" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
+                    SetFocusOnError="True" ValidationExpression="^\s*\d+\s*$"></asp:RegularExpressionValidator>
           </td>
         </tr>
         <tr>
           <td width="37%" align="right">Thời gian bắt đầu bán <span class="mess">(*)</span></td>
           <td width="63%">
-            <asp:TextBox TextMode="SingleLine" runat="server" ID="TextBox1" />
+            <input type="text" class="datepicker" runat="server" id="dtpThoiGianBDBan" />
           </td>
         </tr>
         <tr>
           <td width="37%" align="right">Thời gian kết thúc bán <span class="mess">(*)</span></td>
           <td width="63%">
-            <asp:TextBox TextMode="SingleLine" runat="server" ID="TextBox2" />
+            <input type="text" class="datepicker" runat="server" id="dtpThoiGianKTBan" />
           </td>
         </tr>
         
         <tr>
           <td width="37%" align="right">Thời gian bắt đầu nhận hàng <span class="mess">(*)</span></td>
           <td width="63%">
-            <asp:TextBox TextMode="SingleLine" runat="server" ID="TextBox3" />
+            <input type="text" class="datepicker" runat="server" id="dtpThoiGianBDNhan" />
           </td>
         </tr>
         <tr>
           <td width="37%" align="right">Thời gian kết thúc nhận hàng <span class="mess">(*)</span></td>
           <td width="63%">
-            <asp:TextBox TextMode="SingleLine" runat="server" ID="TextBox4" />
+            <input type="text" class="datepicker" runat="server" id="dtpThoiGianKTNhan" />
           </td>
         </tr>        
         <tr>

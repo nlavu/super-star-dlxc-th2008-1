@@ -13,9 +13,17 @@ namespace BUS
         int intMaDDH = int.MinValue;  
         int intMaTangPham = int.MinValue;
         int intSoLuong = int.MinValue;
+        string strTenTangPham = String.Empty;
+      
         #endregion
 
         #region Properties
+        public string TenTangPham
+        {
+            get { return strTenTangPham; }
+            set { strTenTangPham = value; }
+        }
+
         public int MaDDH
         {
             get { return intMaDDH; }
@@ -141,6 +149,7 @@ namespace BUS
                     ChiTietDonDatHang chiTietDDH = new ChiTietDonDatHang();
                     chiTietDDH.MaDDH = int.Parse(dtRow["MaDDH"].ToString());
                     chiTietDDH.MaTangPham = int.Parse(dtRow["MaTangPham"].ToString());
+                    chiTietDDH.TenTangPham = BUS.TangPham.LayTangPhamTheoMa(chiTietDDH.MaTangPham).TenTangPham;
                     chiTietDDH.SoLuong = int.Parse(dtRow["SoLuong"].ToString());
 
 
