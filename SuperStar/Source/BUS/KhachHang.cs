@@ -141,6 +141,23 @@ namespace BUS
 
             return res;
         }
+        public int XoaKhachHang()
+        {
+            int res;
+            try
+            {
+                List<SqlParameter> lstParams = new List<SqlParameter>();
+                lstParams.Add(new SqlParameter("@makhachhang", _maKhachHang));
+                res = SqlDataAccessHelper.ExecuteNoneQuery("spXoaKhachHang", lstParams);
+
+            }
+            catch (Exception e)
+            {
+                res = 0;
+                throw e;
+            }
+            return res;
+        }
         #endregion
     }
 }

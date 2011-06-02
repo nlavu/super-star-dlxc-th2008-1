@@ -40,7 +40,7 @@ namespace SuperStar.Controls
                 // sản phẩm
                 g_SanPham = BUS.SanPham.LaySanPhamTheoMa(maSanPham);
                 lblTenSanPham.Text = g_SanPham.TenSanPham;
-
+              
                 if (!Page.IsPostBack)
                 {
                     txtSoLuongMuaSP.Text = "1";

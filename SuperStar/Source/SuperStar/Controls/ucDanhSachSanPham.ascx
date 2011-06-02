@@ -13,7 +13,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
            	      <div class="list-product">
            		    <div class="list-product-content">
                	      <div class="list-product-image">
-           		  		    <img src="../image-product/ipod.JPG" />
+           		  		    <img src="<%#Eval("HinhAnh") %>" />
                       </div>
                       <div class="list-product-info">
                   		    <div class="name" ><a href="ChiTietSanPham.aspx?maSanPham=<%#Eval("MaSanPham") %>" ><%#Eval("TenSanPham") %> </a></div>
@@ -36,7 +36,7 @@ CellPadding="0" CellSpacing="0" BorderWidth="0">
        	          <div class="list-product">
        		        <div class="list-product-content">
            	          <div class="list-product-image">
-       		  		        <img src="../image-product/ipod.JPG" />
+       		  		        <img src="<%#Eval("HinhAnh") %>" />
                       </div>
                       <div class="list-product-info">
               		        <div class="name" ><a href="ChiTietSanPham.aspx?maSanPham=<%#Eval("MaSanPham") %>"><%#Eval("TenSanPham") %> </a></div>
