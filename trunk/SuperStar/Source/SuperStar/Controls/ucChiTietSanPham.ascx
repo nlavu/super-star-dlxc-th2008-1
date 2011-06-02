@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucChiTietSanPham.ascx.cs" Inherits="SuperStar.Controls.ChiTietSanPham" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="~/Controls/ucChiTietSanPham.ascx" Inherits="SuperStar.Controls.ChiTietSanPham" %>
 
 
 <asp:Panel runat="server" ID="panelChiTietSanPham">
@@ -21,12 +21,22 @@
                         	<div class="name" >
                             	<asp:HyperLink ID="hpTenSanPham" runat="server" ></asp:HyperLink>
                             </div>
-                            <div class="info-line">Giá: <span class="price"><asp:Label runat="server" ID = "lbGiaSanPham" ></asp:Label> VnD</span> </div>
-                            <div class="info-line">Điểm thưởng: <span class="score"><asp:Label runat="server" ID = "lbDiemThuong" ></asp:Label>/sản phẩm </span></div>
+                            <div class="info-line">Giá: <span class="price"><asp:Label runat="server" ID = "lbGiaSanPham" ></asp:Label> 
+                                VnD</span> </div>
+                            <div class="info-line">Điểm thưởng: <span class="score"><asp:Label runat="server" ID = "lbDiemThuong" ></asp:Label>
+                                /sản phẩm </span></div>
                             <div class="info-line"> 
-                            	Đã bán <span class="number-product"><asp:Label runat="server" ID = "lbSoLuongSPDaBan" ></asp:Label></span> sản phẩm | 
-                                Còn lại <span class="number-product"><asp:Label runat="server" ID = "lbSoLuongTon" ></asp:Label></span> sản phẩm</div>
+                            	Đã bán <span class="number-product"><asp:Label runat="server" ID = "lbSoLuongSPDaBan" ></asp:Label></span> 
+                                sản phẩm | Còn lại <span class="number-product"><asp:Label runat="server" ID = "lbSoLuongTon" ></asp:Label></span> 
+                                sản phẩm</div>
                             <!--div class="info-line"> cái nút mua ở đây</div-->                                          	
+                           
+                            <div class="info-line">
+                                Thông tin chi tiết: <span class="number-product">
+                                <asp:Label ID="lblThongTinChiTietSP" runat="server"></asp:Label>
+                                </span>
+                            </div>
+                            <br />
                            
                                 <asp:Button runat="server" ID ="btnMua" class="button-order" 
                                 onclick="btnMua_Click" />

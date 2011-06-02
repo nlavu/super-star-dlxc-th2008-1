@@ -135,7 +135,7 @@ namespace BUS
                 lstParam.Add(new SqlParameter("@soluongtoida", this.SoLuongToiDa));
                 lstParam.Add(new SqlParameter("@soluongconlai", this.SoLuongConLai));
                 lstParam.Add(new SqlParameter("@masanpham", this.MaSanPham));
-                lstParam.Add(new SqlParameter("@hinhanh", this.HinhAnh));
+//                lstParam.Add(new SqlParameter("@hinhanh", this.HinhAnh));
 
                 res = SqlDataAccessHelper.ExecuteNoneQuery("spCapNhatTangPham", lstParam);
             }

@@ -84,6 +84,26 @@ namespace BUS
             return res;
         }
 
+        public static int CapNhatLoaiTaiKhoan(int maTaiKhoan, int loaiTaiKhoan)
+        {
+            int res;
+            try
+            {
+                List<SqlParameter> lstParams = new List<SqlParameter>();
+                
+                lstParams.Add(new SqlParameter("@mataikhoan", maTaiKhoan));
+                lstParams.Add(new SqlParameter("@loaitk", loaiTaiKhoan));
+                res = SqlDataAccessHelper.ExecuteNoneQuery("spCapNhatLoaiTaiKhoan", lstParams);
+
+            }
+            catch (Exception e)
+            {
+                res = 0;
+                throw e;
+            }
+            return res;
+        }
+
 
         /// <summary>
         /// Lấy thông tin tài khoản theo mã tài khoản  : Vũ
@@ -121,6 +141,38 @@ namespace BUS
         /// </summary>
         /// <param name="intTenTaiKhoan"></param>
         /// <returns></return>
+        public static List<TaiKhoan> LayThongTinTaiKhoanTheoLoaiTaiKhoan(int loaitk)
+        {
+            List<TaiKhoan> lstTaiKhoan = new List<TaiKhoan>();
+
+            try
+            {
+                List<SqlParameter> lstParams = new List<SqlParameter>();
+                lstParams.Add(new SqlParameter("@loaitk", loaitk));
+
+                DataTable dt = new DataTable();
+                dt = SqlDataAccessHelper.ExecuteQuery("spLayDSTaiKhoanTheoLoaiTaiKhoan", lstParams);
+                
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TaiKhoan tk = new TaiKhoan();
+
+                    tk.MaTaiKhoan = int.Parse(dr["MaTaiKhoan"].ToString());
+                    tk.TenTaiKhoan = dr["TenTaiKhoan"].ToString();
+                    tk.MatKhau = (dr["MatKhau"].ToString());
+                    tk.AnhDaiDien = dr["AnhDaiDien"].ToString();
+                    tk.LoaiTK = int.Parse(dr["LoaiTK"].ToString());
+
+                    lstTaiKhoan.Add(tk);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return lstTaiKhoan;
+        }
+
         public static TaiKhoan LayThongTinTaiKhoanTheoTenTaiKhoan(string tenTaiKhoan)
         {
             TaiKhoan taiKhoan = new TaiKhoan();
@@ -137,7 +189,7 @@ namespace BUS
                 }
                 else
                 {
-                    DataRow dtRow = dtTaiKhoan.Rows[0];                
+                    DataRow dtRow = dtTaiKhoan.Rows[0];
                     taiKhoan.intMaTaiKhoan = int.Parse(dtRow["MaTaiKhoan"].ToString());
                     taiKhoan.strTenTaiKhoan = dtRow["TenTaiKhoan"].ToString();
                     taiKhoan.strMatKhau = dtRow["MatKhau"].ToString();

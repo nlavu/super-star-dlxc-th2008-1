@@ -37,7 +37,7 @@ namespace SuperStar.Controls
             lbDiemThuong.Text = sanPham.DiemThuong.ToString();
             lbSoLuongSPDaBan.Text = (sanPham.SoLuongSP - sanPham.SoLuongTon).ToString();
             lbSoLuongTon.Text = sanPham.SoLuongTon.ToString();
-
+            lblThongTinChiTietSP.Text = sanPham.ThongTinChiTiet;
             List<TangPham> lstTangPham = new List<TangPham>();
             lstTangPham = TangPham.LayDSTangPhamTheoMaSP(maSanPham);
             this.dlDanhSachTangPham.DataSource = lstTangPham;
